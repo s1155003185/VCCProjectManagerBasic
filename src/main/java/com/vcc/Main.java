@@ -1,5 +1,10 @@
 package com.vcc;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JScrollBar;
+import javax.swing.plaf.basic.BasicScrollBarUI;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -16,6 +21,32 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        
+        // initialize interface
+        spBase.setDividerLocation(100);
+        spMain.setDividerLocation(spMain.getSize().height - 100);
+        
+        
+        JScrollBar verticalScrollBar = spLeft.getVerticalScrollBar();
+        verticalScrollBar.setUI(new BasicScrollBarUI() {
+            @Override
+            protected void configureScrollBarColors() {
+                this.thumbColor = Color.GRAY; // Set thumb color
+                this.trackColor = Color.LIGHT_GRAY; // Set track color
+            }
+
+//            @Override
+//            protected void paintThumb(Graphics g) {
+//                g.setColor(thumbColor);
+//                g.fillRect(0, 0, thumb.getWidth(), thumb.getHeight());
+//            }
+//
+//            @Override
+//            protected void paintTrack(Graphics g) {
+//                g.setColor(trackColor);
+//                g.fillRect(0, 0, track.getWidth(), track.getHeight());
+//            }
+        });
     }
 
     /**
@@ -27,29 +58,69 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
+        spBase = new javax.swing.JSplitPane();
+        spMain = new javax.swing.JSplitPane();
+        pnlMain = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        spLeft = new javax.swing.JScrollPane();
+        trWorkspace = new javax.swing.JTree();
+        mbMenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        spBase.setDividerSize(2);
+
+        spMain.setDividerSize(2);
+        spMain.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+
+        javax.swing.GroupLayout pnlMainLayout = new javax.swing.GroupLayout(pnlMain);
+        pnlMain.setLayout(pnlMainLayout);
+        pnlMainLayout.setHorizontalGroup(
+            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 573, Short.MAX_VALUE)
+        );
+        pnlMainLayout.setVerticalGroup(
+            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 154, Short.MAX_VALUE)
+        );
+
+        spMain.setTopComponent(pnlMain);
+        pnlMain.getAccessibleContext().setAccessibleParent(spMain);
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(234, 100));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        spMain.setBottomComponent(jScrollPane1);
+
+        spBase.setRightComponent(spMain);
+
+        spLeft.setViewportView(trWorkspace);
+
+        spBase.setLeftComponent(spLeft);
+
         jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        mbMenuBar.add(jMenu1);
 
         jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        mbMenuBar.add(jMenu2);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(mbMenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(spBase)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 276, Short.MAX_VALUE)
+            .addComponent(spBase, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
         );
 
         pack();
@@ -97,6 +168,13 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JMenuBar mbMenuBar;
+    private javax.swing.JPanel pnlMain;
+    private javax.swing.JSplitPane spBase;
+    private javax.swing.JScrollPane spLeft;
+    private javax.swing.JSplitPane spMain;
+    private javax.swing.JTree trWorkspace;
     // End of variables declaration//GEN-END:variables
 }
