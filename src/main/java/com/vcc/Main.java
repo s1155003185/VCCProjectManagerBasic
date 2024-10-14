@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JScrollBar;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
 /*
@@ -28,28 +30,6 @@ public class Main extends javax.swing.JFrame {
         spBase.setDividerLocation(100);
         spMain.setDividerLocation(spMain.getSize().height - 100);
         //setIconImage(new ImageIcon(getClass().getResource("/resources/abc.png")).getImage());
-        
-        
-        JScrollBar verticalScrollBar = spLeft.getVerticalScrollBar();
-        verticalScrollBar.setUI(new BasicScrollBarUI() {
-            @Override
-            protected void configureScrollBarColors() {
-                this.thumbColor = Color.GRAY; // Set thumb color
-                this.trackColor = Color.LIGHT_GRAY; // Set track color
-            }
-
-//            @Override
-//            protected void paintThumb(Graphics g) {
-//                g.setColor(thumbColor);
-//                g.fillRect(0, 0, thumb.getWidth(), thumb.getHeight());
-//            }
-//
-//            @Override
-//            protected void paintTrack(Graphics g) {
-//                g.setColor(trackColor);
-//                g.fillRect(0, 0, track.getWidth(), track.getHeight());
-//            }
-        });
     }
 
     /**
@@ -158,12 +138,17 @@ public class Main extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Main().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Main().setVisible(true);
         });
         
+        try {
+            UIManager.setLookAndFeel(
+                UIManager.getCrossPlatformLookAndFeelClassName());
+        } 
+        catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
+           // handle exception
+        }
         // Set the property to use the screen menu bar on macOS
         System.setProperty("apple.laf.useScreenMenuBar", "true");
     }
