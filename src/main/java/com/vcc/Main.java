@@ -2,6 +2,7 @@ package com.vcc;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import javax.swing.ImageIcon;
 import javax.swing.JScrollBar;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
@@ -22,9 +23,11 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         
+        setTitle("VCC Project Manager");
         // initialize interface
         spBase.setDividerLocation(100);
         spMain.setDividerLocation(spMain.getSize().height - 100);
+        //setIconImage(new ImageIcon(getClass().getResource("/resources/abc.png")).getImage());
         
         
         JScrollBar verticalScrollBar = spLeft.getVerticalScrollBar();
