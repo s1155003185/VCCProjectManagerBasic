@@ -143,8 +143,7 @@ public class Main extends javax.swing.JFrame {
         });
         
         try {
-            UIManager.setLookAndFeel(
-                UIManager.getCrossPlatformLookAndFeelClassName());
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         } 
         catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
            // handle exception
