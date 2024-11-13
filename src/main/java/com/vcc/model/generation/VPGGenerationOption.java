@@ -216,6 +216,62 @@ public class VPGGenerationOption {
         VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ObjectTypeDirectory.getValue(), valueReference, -1);
     }
 
+    public String getApplicationDirectoryHpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryHpp.getValue(), result, -1);
+        return result.getValue().getWideString(0);
+    }
+
+    public void setApplicationDirectoryHpp(String value) {
+        Pointer valuePtr = new Memory(Native.WCHAR_SIZE * (value.length() + 1));
+        valuePtr.setWideString(0, value);
+        PointerByReference valueReference = new PointerByReference();
+        valueReference.setValue(valuePtr);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryHpp.getValue(), valueReference, -1);
+    }
+
+    public String getApplicationDirectoryCpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryCpp.getValue(), result, -1);
+        return result.getValue().getWideString(0);
+    }
+
+    public void setApplicationDirectoryCpp(String value) {
+        Pointer valuePtr = new Memory(Native.WCHAR_SIZE * (value.length() + 1));
+        valuePtr.setWideString(0, value);
+        PointerByReference valueReference = new PointerByReference();
+        valueReference.setValue(valuePtr);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryCpp.getValue(), valueReference, -1);
+    }
+
+    public String getFormDirectoryHpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.FormDirectoryHpp.getValue(), result, -1);
+        return result.getValue().getWideString(0);
+    }
+
+    public void setFormDirectoryHpp(String value) {
+        Pointer valuePtr = new Memory(Native.WCHAR_SIZE * (value.length() + 1));
+        valuePtr.setWideString(0, value);
+        PointerByReference valueReference = new PointerByReference();
+        valueReference.setValue(valuePtr);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.FormDirectoryHpp.getValue(), valueReference, -1);
+    }
+
+    public String getFormDirectoryCpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.FormDirectoryCpp.getValue(), result, -1);
+        return result.getValue().getWideString(0);
+    }
+
+    public void setFormDirectoryCpp(String value) {
+        Pointer valuePtr = new Memory(Native.WCHAR_SIZE * (value.length() + 1));
+        valuePtr.setWideString(0, value);
+        PointerByReference valueReference = new PointerByReference();
+        valueReference.setValue(valuePtr);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.FormDirectoryCpp.getValue(), valueReference, -1);
+    }
+
     public String getObjectDirectoryHpp() {
         PointerByReference result = new PointerByReference();
         VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ObjectDirectoryHpp.getValue(), result, -1);

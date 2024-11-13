@@ -5,7 +5,9 @@ import java.util.Objects;
 public enum VPGObjectType {
     NA(0),
     GenerationOption(1),
-    GenerationOptionExport(2);
+    GenerationOptionExport(2),
+    GitForm(3),
+    GitLog(4);
 
     public final Integer value;
 

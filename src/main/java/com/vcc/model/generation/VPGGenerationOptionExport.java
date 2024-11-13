@@ -87,6 +87,20 @@ public class VPGGenerationOptionExport {
         VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionExportProperty.DllBridgeDirectory.getValue(), valueReference, -1);
     }
 
+    public String getFormDirectory() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionExportProperty.FormDirectory.getValue(), result, -1);
+        return result.getValue().getWideString(0);
+    }
+
+    public void setFormDirectory(String value) {
+        Pointer valuePtr = new Memory(Native.WCHAR_SIZE * (value.length() + 1));
+        valuePtr.setWideString(0, value);
+        PointerByReference valueReference = new PointerByReference();
+        valueReference.setValue(valuePtr);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionExportProperty.FormDirectory.getValue(), valueReference, -1);
+    }
+
     public String getObjectDirectory() {
         PointerByReference result = new PointerByReference();
         VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionExportProperty.ObjectDirectory.getValue(), result, -1);

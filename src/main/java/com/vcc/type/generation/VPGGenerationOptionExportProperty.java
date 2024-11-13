@@ -9,8 +9,9 @@ public enum VPGGenerationOptionExportProperty {
     ExportDirectoryDll(3),
     ExportDirectoryExe(4),
     DllBridgeDirectory(5),
-    ObjectDirectory(6),
-    TypeDirectory(7);
+    FormDirectory(6),
+    ObjectDirectory(7),
+    TypeDirectory(8);
 
     public final Integer value;
 
