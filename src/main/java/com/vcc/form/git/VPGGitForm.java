@@ -3,6 +3,7 @@ package com.vcc.form.git;
 import com.sun.jna.Pointer;
 import com.vcc.VPGDllFunctions;
 import com.vcc.model.git.VPGGitLog;
+import com.vcc.type.VPGObjectType;
 import com.vcc.type.git.VPGGitFormProperty;
 
 public class VPGGitForm {
@@ -10,6 +11,10 @@ public class VPGGitForm {
 
     public VPGGitForm(Pointer handle) {
         this.Handle = handle;
+    }
+
+    public VPGGitForm() {
+        this.Handle = VPGDllFunctions.Instance.ApplicationCreateForm(VPGObjectType.GitForm.getValue());
     }
 
     public VPGGitLog getLog() {

@@ -10,11 +10,18 @@ public interface VPGDllFunctions extends Library {
 
     static private VPGDllFunctions loadLibrary() {
         String prefix = System.getProperty("os.name").startsWith("Windows") ? "lib" : "";
-        return (VPGDllFunctions)Native.load(prefix + "vpg", VPGDllFunctions.class);
+        var lib = (VPGDllFunctions)Native.load(prefix + "vpg", VPGDllFunctions.class);
+        lib.ApplicationStart();
+        return lib;
     }
 
     int GetVersion(PointerByReference str);
     Pointer CreateObject(long objectType);
+    void ApplicationStart();
+    Pointer ApplicationCreateForm(long formType);
+    boolean ApplicationIsFormPresent(Pointer form);
+    boolean ApplicationIsFormClosable(Pointer form);
+    boolean ApplicationCloseForm(Pointer form, boolean isForce);
     boolean ReadBool(Pointer ref, long property, long index);
     boolean ReadBoolByKey(Pointer ref, long property, Pointer key);
     void WriteBool(Pointer ref, long property, boolean value, long index);

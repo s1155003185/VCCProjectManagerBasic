@@ -1,5 +1,6 @@
 package com.vcc;
 
+import com.vcc.form.git.VPGGitForm;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
@@ -30,6 +31,13 @@ public class Main extends javax.swing.JFrame {
         spBase.setDividerLocation(100);
         spMain.setDividerLocation(spMain.getSize().height - 100);
         //setIconImage(new ImageIcon(getClass().getResource("/resources/abc.png")).getImage());
+    
+        VPGGitForm form = new VPGGitForm();
+        System.out.println(VPGDllFunctions.Instance.ApplicationIsFormPresent(form.Handle));
+        System.out.println(VPGDllFunctions.Instance.ApplicationIsFormClosable(form.Handle));
+        VPGDllFunctions.Instance.ApplicationCloseForm(form.Handle, true);
+        System.out.println(VPGDllFunctions.Instance.ApplicationIsFormPresent(form.Handle));
+        
     }
 
     /**
