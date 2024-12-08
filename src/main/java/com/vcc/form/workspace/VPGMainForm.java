@@ -1,29 +1,56 @@
-package com.vcc.form.git;
+package com.vcc.form.workspace;
 
 import com.sun.jna.Pointer;
 import com.vcc.VPGDllFunctions;
-import com.vcc.model.git.VPGGitLog;
 import com.vcc.type.VPGObjectType;
-import com.vcc.type.git.VPGGitFormProperty;
+import com.vcc.type.workspace.VPGMainFormProperty;
 
-public class VPGGitForm {
+public class VPGMainForm {
     public Pointer Handle = null;
 
-    public VPGGitForm(Pointer handle) {
+    public VPGMainForm(Pointer handle) {
         this.Handle = handle;
     }
 
-    public VPGGitForm() {
+    public VPGMainForm() {
         this.Handle = VPGDllFunctions.Instance.ApplicationCreateForm(VPGObjectType.GitForm.getValue());
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
-    public VPGGitLog getLog() {
-        return new VPGGitLog(VPGDllFunctions.Instance.ReadObject(Handle, VPGGitFormProperty.Log.getValue(), -1));
+    public long getWorkspaceFormsCount() {
+        return VPGDllFunctions.Instance.GetContainerCount(Handle, VPGMainFormProperty.WorkspaceForms.getValue());
     }
 
-    public void setLog(VPGGitLog value) {
-        VPGDllFunctions.Instance.WriteObject(Handle, VPGGitFormProperty.Log.getValue(), value.Handle, -1);
+    public VPGWorkspaceForm getWorkspaceFormsAt(long index) {
+        return new VPGWorkspaceForm(VPGDllFunctions.Instance.ReadObject(Handle, VPGMainFormProperty.WorkspaceForms.getValue(), index));
+    }
+
+    public void setWorkspaceFormsAt(long index, VPGWorkspaceForm value) {
+        VPGDllFunctions.Instance.WriteObject(Handle, VPGMainFormProperty.WorkspaceForms.getValue(), value.Handle, index);
+    }
+
+    public VPGWorkspaceForm addWorkspaceForms() {
+        return addWorkspaceFormsAt(-1);
+    }
+
+    public VPGWorkspaceForm addWorkspaceFormsAt(long index) {
+        return new VPGWorkspaceForm(VPGDllFunctions.Instance.AddObject(Handle, VPGMainFormProperty.WorkspaceForms.getValue(), VPGObjectType.WorkspaceForm.getValue(), index));
+    }
+
+    public void insertWorkspaceForms(VPGWorkspaceForm value) {
+        insertWorkspaceFormsAt(-1, value);
+    }
+
+    public void insertWorkspaceFormsAt(long index, VPGWorkspaceForm value) {
+        VPGDllFunctions.Instance.InsertObject(Handle, VPGMainFormProperty.WorkspaceForms.getValue(), value.Handle, index);
+    }
+
+    public void removeWorkspaceFormsAt(long index) {
+        VPGDllFunctions.Instance.RemoveContainerElement(Handle, VPGMainFormProperty.WorkspaceForms.getValue(), index);
+    }
+
+    public void clearWorkspaceForms() {
+        VPGDllFunctions.Instance.ClearContainer(Handle, VPGMainFormProperty.WorkspaceForms.getValue());
     }
     // </editor-fold>
 

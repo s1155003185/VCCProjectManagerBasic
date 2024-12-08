@@ -33,10 +33,10 @@ public class Main extends javax.swing.JFrame {
         //setIconImage(new ImageIcon(getClass().getResource("/resources/abc.png")).getImage());
     
         VPGGitForm form = new VPGGitForm();
-        System.out.println(VPGDllFunctions.Instance.ApplicationIsFormPresent(form.Handle));
-        System.out.println(VPGDllFunctions.Instance.ApplicationIsFormClosable(form.Handle));
+        System.out.println(form.getLog());
+        form.clearAction();
         VPGDllFunctions.Instance.ApplicationCloseForm(form.Handle, true);
-        System.out.println(VPGDllFunctions.Instance.ApplicationIsFormPresent(form.Handle));
+        
         
     }
 

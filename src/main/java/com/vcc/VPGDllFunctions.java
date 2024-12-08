@@ -17,11 +17,22 @@ public interface VPGDllFunctions extends Library {
 
     int GetVersion(PointerByReference str);
     Pointer CreateObject(long objectType);
-    void ApplicationStart();
-    Pointer ApplicationCreateForm(long formType);
-    boolean ApplicationIsFormPresent(Pointer form);
-    boolean ApplicationIsFormClosable(Pointer form);
+    long ApplicationClearFormAction(Pointer form);
     boolean ApplicationCloseForm(Pointer form, boolean isForce);
+    Pointer ApplicationCreateForm(long formType);
+    void ApplicationDoFormAction(Pointer form, long formProperty);
+    long ApplicationGetFormActionFirstSeqNo(Pointer form);
+    long ApplicationGetFormActionLastSeqNo(Pointer form);
+    void ApplicationInitializeForm(Pointer form);
+    boolean ApplicationIsFormClosable(Pointer form);
+    boolean ApplicationIsFormClosed(Pointer form);
+    long ApplicationRedoFormAction(Pointer form, long noOfStep);
+    long ApplicationRedoFormActionToSeqNo(Pointer form, long seqNo);
+    void ApplicationReloadForm(Pointer form);
+    void ApplicationStart();
+    long ApplicationTruncateFormAction(Pointer form);
+    long ApplicationUndoFormAction(Pointer form, long noOfStep);
+    long ApplicationUndoFormActionToSeqNo(Pointer form, long seqNo);
     boolean ReadBool(Pointer ref, long property, long index);
     boolean ReadBoolByKey(Pointer ref, long property, Pointer key);
     void WriteBool(Pointer ref, long property, boolean value, long index);

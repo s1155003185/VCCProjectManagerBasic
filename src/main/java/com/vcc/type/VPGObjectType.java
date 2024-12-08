@@ -7,7 +7,9 @@ public enum VPGObjectType {
     GenerationOption(1),
     GenerationOptionExport(2),
     GitForm(3),
-    GitLog(4);
+    GitLog(4),
+    MainForm(5),
+    WorkspaceForm(6);
 
     public final Integer value;
 

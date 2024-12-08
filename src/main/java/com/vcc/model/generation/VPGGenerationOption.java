@@ -16,6 +16,7 @@ public class VPGGenerationOption {
         this.Handle = handle;
     }
 
+    // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public String getVersion() {
         PointerByReference result = new PointerByReference();
         VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.Version.getValue(), result, -1);
@@ -160,20 +161,6 @@ public class VPGGenerationOption {
         VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.TypeWorkspace.getValue(), valueReference, -1);
     }
 
-    public String getActionTypeDirectory() {
-        PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ActionTypeDirectory.getValue(), result, -1);
-        return result.getValue().getWideString(0);
-    }
-
-    public void setActionTypeDirectory(String value) {
-        Pointer valuePtr = new Memory(Native.WCHAR_SIZE * (value.length() + 1));
-        valuePtr.setWideString(0, value);
-        PointerByReference valueReference = new PointerByReference();
-        valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ActionTypeDirectory.getValue(), valueReference, -1);
-    }
-
     public String getExceptionTypeDirectory() {
         PointerByReference result = new PointerByReference();
         VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ExceptionTypeDirectory.getValue(), result, -1);
@@ -186,20 +173,6 @@ public class VPGGenerationOption {
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
         VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ExceptionTypeDirectory.getValue(), valueReference, -1);
-    }
-
-    public String getManagerTypeDirectory() {
-        PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ManagerTypeDirectory.getValue(), result, -1);
-        return result.getValue().getWideString(0);
-    }
-
-    public void setManagerTypeDirectory(String value) {
-        Pointer valuePtr = new Memory(Native.WCHAR_SIZE * (value.length() + 1));
-        valuePtr.setWideString(0, value);
-        PointerByReference valueReference = new PointerByReference();
-        valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ManagerTypeDirectory.getValue(), valueReference, -1);
     }
 
     public String getObjectTypeDirectory() {
@@ -457,4 +430,5 @@ public class VPGGenerationOption {
     public void clearExports() {
         VPGDllFunctions.Instance.ClearContainer(Handle, VPGGenerationOptionProperty.Exports.getValue());
     }
+    // </editor-fold>
 }

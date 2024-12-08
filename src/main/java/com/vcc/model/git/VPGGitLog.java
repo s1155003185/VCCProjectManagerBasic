@@ -14,6 +14,7 @@ public class VPGGitLog {
         this.Handle = handle;
     }
 
+    // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public long getColumnIndex() {
         return VPGDllFunctions.Instance.ReadLong(Handle, VPGGitLogProperty.ColumnIndex.getValue(), -1);
     }
@@ -379,4 +380,5 @@ public class VPGGitLog {
         valueReference.setValue(valuePtr);
         VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.FullMessage.getValue(), valueReference, -1);
     }
+    // </editor-fold>
 }

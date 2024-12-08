@@ -1,29 +1,57 @@
-package com.vcc.form.git;
+package com.vcc.form.workspace;
 
 import com.sun.jna.Pointer;
 import com.vcc.VPGDllFunctions;
-import com.vcc.model.git.VPGGitLog;
+import com.vcc.form.git.VPGGitForm;
 import com.vcc.type.VPGObjectType;
-import com.vcc.type.git.VPGGitFormProperty;
+import com.vcc.type.workspace.VPGWorkspaceFormProperty;
 
-public class VPGGitForm {
+public class VPGWorkspaceForm {
     public Pointer Handle = null;
 
-    public VPGGitForm(Pointer handle) {
+    public VPGWorkspaceForm(Pointer handle) {
         this.Handle = handle;
     }
 
-    public VPGGitForm() {
+    public VPGWorkspaceForm() {
         this.Handle = VPGDllFunctions.Instance.ApplicationCreateForm(VPGObjectType.GitForm.getValue());
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
-    public VPGGitLog getLog() {
-        return new VPGGitLog(VPGDllFunctions.Instance.ReadObject(Handle, VPGGitFormProperty.Log.getValue(), -1));
+    public long getGitFormsCount() {
+        return VPGDllFunctions.Instance.GetContainerCount(Handle, VPGWorkspaceFormProperty.GitForms.getValue());
     }
 
-    public void setLog(VPGGitLog value) {
-        VPGDllFunctions.Instance.WriteObject(Handle, VPGGitFormProperty.Log.getValue(), value.Handle, -1);
+    public VPGGitForm getGitFormsAt(long index) {
+        return new VPGGitForm(VPGDllFunctions.Instance.ReadObject(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), index));
+    }
+
+    public void setGitFormsAt(long index, VPGGitForm value) {
+        VPGDllFunctions.Instance.WriteObject(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), value.Handle, index);
+    }
+
+    public VPGGitForm addGitForms() {
+        return addGitFormsAt(-1);
+    }
+
+    public VPGGitForm addGitFormsAt(long index) {
+        return new VPGGitForm(VPGDllFunctions.Instance.AddObject(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), VPGObjectType.GitForm.getValue(), index));
+    }
+
+    public void insertGitForms(VPGGitForm value) {
+        insertGitFormsAt(-1, value);
+    }
+
+    public void insertGitFormsAt(long index, VPGGitForm value) {
+        VPGDllFunctions.Instance.InsertObject(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), value.Handle, index);
+    }
+
+    public void removeGitFormsAt(long index) {
+        VPGDllFunctions.Instance.RemoveContainerElement(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), index);
+    }
+
+    public void clearGitForms() {
+        VPGDllFunctions.Instance.ClearContainer(Handle, VPGWorkspaceFormProperty.GitForms.getValue());
     }
     // </editor-fold>
 

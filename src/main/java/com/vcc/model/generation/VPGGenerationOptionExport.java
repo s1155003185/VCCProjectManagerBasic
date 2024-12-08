@@ -15,6 +15,7 @@ public class VPGGenerationOptionExport {
         this.Handle = handle;
     }
 
+    // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public VPGGenerationOptionInterfaceType getInterface() {
         return VPGGenerationOptionInterfaceType.parse((int)VPGDllFunctions.Instance.ReadLong(Handle, VPGGenerationOptionExportProperty.Interface.getValue(), -1));
     }
@@ -128,4 +129,5 @@ public class VPGGenerationOptionExport {
         valueReference.setValue(valuePtr);
         VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionExportProperty.TypeDirectory.getValue(), valueReference, -1);
     }
+    // </editor-fold>
 }
