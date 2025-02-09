@@ -19,11 +19,11 @@ public class VPGGitForm {
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public VPGGitLog getLog() {
-        return new VPGGitLog(VPGDllFunctions.Instance.ReadObject(Handle, VPGGitFormProperty.Log.getValue(), -1));
+        return new VPGGitLog(VPGDllFunctions.Instance.ReadObject(Handle, VPGGitFormProperty.Log.getValue()));
     }
 
     public void setLog(VPGGitLog value) {
-        VPGDllFunctions.Instance.WriteObject(Handle, VPGGitFormProperty.Log.getValue(), value.Handle, -1);
+        VPGDllFunctions.Instance.WriteObject(Handle, VPGGitFormProperty.Log.getValue(), value.Handle);
     }
     // </editor-fold>
 
@@ -44,10 +44,6 @@ public class VPGGitForm {
         return VPGDllFunctions.Instance.ApplicationGetFormActionLastSeqNo(Handle);
     }
 
-    public void initialize() {
-        VPGDllFunctions.Instance.ApplicationInitializeForm(Handle);
-    }
-
     public boolean isClosable() {
         return VPGDllFunctions.Instance.ApplicationIsFormClosable(Handle);
     }
@@ -62,10 +58,6 @@ public class VPGGitForm {
 
     public long redoToSeqNo(long seqNo) {
         return VPGDllFunctions.Instance.ApplicationRedoFormActionToSeqNo(Handle, seqNo);
-    }
-
-    public void reload() {
-        VPGDllFunctions.Instance.ApplicationReloadForm(Handle);
     }
 
     public long truncateAction() {

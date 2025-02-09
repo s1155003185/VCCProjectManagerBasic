@@ -3,7 +3,8 @@ package com.vcc.type.workspace;
 import java.util.Objects;
 
 public enum VPGWorkspaceFormProperty {
-    GitForms(0);
+    Name(0),
+    GitForms(1);
 
     public final Integer value;
 

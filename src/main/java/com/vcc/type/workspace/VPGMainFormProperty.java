@@ -3,7 +3,10 @@ package com.vcc.type.workspace;
 import java.util.Objects;
 
 public enum VPGMainFormProperty {
-    WorkspaceForms(0);
+    WorkspaceForms(0),
+    CurrentWorkspaceForm(1),
+    AddWorkspaceForm(2),
+    DeleteWorkspaceForm(3);
 
     public final Integer value;
 

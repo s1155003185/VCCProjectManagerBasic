@@ -1,6 +1,10 @@
 package com.vcc;
 
 import com.vcc.form.git.VPGGitForm;
+import com.vcc.form.workspace.VPGMainForm;
+import com.vcc.form.workspace.VPGWorkspaceForm;
+import com.vcc.model.generation.VPGGenerationOption;
+import com.vcc.model.git.VPGGitLog;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
@@ -32,12 +36,11 @@ public class Main extends javax.swing.JFrame {
         spMain.setDividerLocation(spMain.getSize().height - 100);
         //setIconImage(new ImageIcon(getClass().getResource("/resources/abc.png")).getImage());
     
-        VPGGitForm form = new VPGGitForm();
-        System.out.println(form.getLog());
-        form.clearAction();
-        VPGDllFunctions.Instance.ApplicationCloseForm(form.Handle, true);
-        
-        
+        VPGMainForm form = new VPGMainForm();
+        form.doAddWorkspaceForm();
+        System.out.println(form.getWorkspaceFormsCount());
+        form.removeWorkspaceForms(form.getWorkspaceFormsAtIndex(0));
+        System.out.println(form.getWorkspaceFormsCount());
     }
 
     /**

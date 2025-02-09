@@ -19,18 +19,20 @@ public enum VPGGenerationOptionProperty {
     ObjectTypeDirectory(13),
     ApplicationDirectoryHpp(14),
     ApplicationDirectoryCpp(15),
-    FormDirectoryHpp(16),
-    FormDirectoryCpp(17),
-    ObjectDirectoryHpp(18),
-    ObjectDirectoryCpp(19),
-    PropertyAccessorDirectoryHpp(20),
-    PropertyAccessorDirectoryCpp(21),
-    ObjectFactoryDirectoryHpp(22),
-    ObjectFactoryDirectoryCpp(23),
-    PropertyAccessorFactoryDirectoryHpp(24),
-    PropertyAccessorFactoryDirectoryCpp(25),
-    Plugins(26),
-    Exports(27);
+    ActionDirectoryHpp(16),
+    ActionDirectoryCpp(17),
+    FormDirectoryHpp(18),
+    FormDirectoryCpp(19),
+    ObjectDirectoryHpp(20),
+    ObjectDirectoryCpp(21),
+    PropertyAccessorDirectoryHpp(22),
+    PropertyAccessorDirectoryCpp(23),
+    ObjectFactoryDirectoryHpp(24),
+    ObjectFactoryDirectoryCpp(25),
+    PropertyAccessorFactoryDirectoryHpp(26),
+    PropertyAccessorFactoryDirectoryCpp(27),
+    Plugins(28),
+    Exports(29);
 
     public final Integer value;
 

@@ -19,7 +19,7 @@ public class VPGGenerationOption {
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public String getVersion() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.Version.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.Version.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -28,20 +28,20 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.Version.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.Version.getValue(), valueReference);
     }
 
     public VPGProjectType getProjectType() {
-        return VPGProjectType.parse((int)VPGDllFunctions.Instance.ReadLong(Handle, VPGGenerationOptionProperty.ProjectType.getValue(), -1));
+        return VPGProjectType.parse((int)VPGDllFunctions.Instance.ReadLong(Handle, VPGGenerationOptionProperty.ProjectType.getValue()));
     }
 
     public void setProjectType(VPGProjectType value) {
-        VPGDllFunctions.Instance.WriteLong(Handle, VPGGenerationOptionProperty.ProjectType.getValue(), value.getValue(), -1);
+        VPGDllFunctions.Instance.WriteLong(Handle, VPGGenerationOptionProperty.ProjectType.getValue(), value.getValue());
     }
 
     public String getTemplateGitUrl() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.TemplateGitUrl.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.TemplateGitUrl.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -50,12 +50,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.TemplateGitUrl.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.TemplateGitUrl.getValue(), valueReference);
     }
 
     public String getTemplateWorkspace() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.TemplateWorkspace.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.TemplateWorkspace.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -64,12 +64,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.TemplateWorkspace.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.TemplateWorkspace.getValue(), valueReference);
     }
 
     public String getProjectPrefix() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ProjectPrefix.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ProjectPrefix.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -78,12 +78,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ProjectPrefix.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ProjectPrefix.getValue(), valueReference);
     }
 
     public String getProjectName() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ProjectName.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ProjectName.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -92,12 +92,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ProjectName.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ProjectName.getValue(), valueReference);
     }
 
     public String getProjectNameDll() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ProjectNameDll.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ProjectNameDll.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -106,12 +106,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ProjectNameDll.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ProjectNameDll.getValue(), valueReference);
     }
 
     public String getProjectNameExe() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ProjectNameExe.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ProjectNameExe.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -120,36 +120,36 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ProjectNameExe.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ProjectNameExe.getValue(), valueReference);
     }
 
     public boolean getIsGit() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGGenerationOptionProperty.IsGit.getValue(), -1);
+        return VPGDllFunctions.Instance.ReadBool(Handle, VPGGenerationOptionProperty.IsGit.getValue());
     }
 
     public void setIsGit(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGGenerationOptionProperty.IsGit.getValue(), value, -1);
+        VPGDllFunctions.Instance.WriteBool(Handle, VPGGenerationOptionProperty.IsGit.getValue(), value);
     }
 
     public boolean getIsExcludeUnittest() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGGenerationOptionProperty.IsExcludeUnittest.getValue(), -1);
+        return VPGDllFunctions.Instance.ReadBool(Handle, VPGGenerationOptionProperty.IsExcludeUnittest.getValue());
     }
 
     public void setIsExcludeUnittest(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGGenerationOptionProperty.IsExcludeUnittest.getValue(), value, -1);
+        VPGDllFunctions.Instance.WriteBool(Handle, VPGGenerationOptionProperty.IsExcludeUnittest.getValue(), value);
     }
 
     public boolean getIsExcludeVCCUnitTest() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGGenerationOptionProperty.IsExcludeVCCUnitTest.getValue(), -1);
+        return VPGDllFunctions.Instance.ReadBool(Handle, VPGGenerationOptionProperty.IsExcludeVCCUnitTest.getValue());
     }
 
     public void setIsExcludeVCCUnitTest(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGGenerationOptionProperty.IsExcludeVCCUnitTest.getValue(), value, -1);
+        VPGDllFunctions.Instance.WriteBool(Handle, VPGGenerationOptionProperty.IsExcludeVCCUnitTest.getValue(), value);
     }
 
     public String getTypeWorkspace() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.TypeWorkspace.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.TypeWorkspace.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -158,12 +158,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.TypeWorkspace.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.TypeWorkspace.getValue(), valueReference);
     }
 
     public String getExceptionTypeDirectory() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ExceptionTypeDirectory.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ExceptionTypeDirectory.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -172,12 +172,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ExceptionTypeDirectory.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ExceptionTypeDirectory.getValue(), valueReference);
     }
 
     public String getObjectTypeDirectory() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ObjectTypeDirectory.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ObjectTypeDirectory.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -186,12 +186,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ObjectTypeDirectory.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ObjectTypeDirectory.getValue(), valueReference);
     }
 
     public String getApplicationDirectoryHpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryHpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryHpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -200,12 +200,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryHpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryHpp.getValue(), valueReference);
     }
 
     public String getApplicationDirectoryCpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryCpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryCpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -214,12 +214,40 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryCpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ApplicationDirectoryCpp.getValue(), valueReference);
+    }
+
+    public String getActionDirectoryHpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ActionDirectoryHpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public void setActionDirectoryHpp(String value) {
+        Pointer valuePtr = new Memory(Native.WCHAR_SIZE * (value.length() + 1));
+        valuePtr.setWideString(0, value);
+        PointerByReference valueReference = new PointerByReference();
+        valueReference.setValue(valuePtr);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ActionDirectoryHpp.getValue(), valueReference);
+    }
+
+    public String getActionDirectoryCpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ActionDirectoryCpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public void setActionDirectoryCpp(String value) {
+        Pointer valuePtr = new Memory(Native.WCHAR_SIZE * (value.length() + 1));
+        valuePtr.setWideString(0, value);
+        PointerByReference valueReference = new PointerByReference();
+        valueReference.setValue(valuePtr);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ActionDirectoryCpp.getValue(), valueReference);
     }
 
     public String getFormDirectoryHpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.FormDirectoryHpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.FormDirectoryHpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -228,12 +256,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.FormDirectoryHpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.FormDirectoryHpp.getValue(), valueReference);
     }
 
     public String getFormDirectoryCpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.FormDirectoryCpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.FormDirectoryCpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -242,12 +270,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.FormDirectoryCpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.FormDirectoryCpp.getValue(), valueReference);
     }
 
     public String getObjectDirectoryHpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ObjectDirectoryHpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ObjectDirectoryHpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -256,12 +284,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ObjectDirectoryHpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ObjectDirectoryHpp.getValue(), valueReference);
     }
 
     public String getObjectDirectoryCpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ObjectDirectoryCpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ObjectDirectoryCpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -270,12 +298,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ObjectDirectoryCpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ObjectDirectoryCpp.getValue(), valueReference);
     }
 
     public String getPropertyAccessorDirectoryHpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.PropertyAccessorDirectoryHpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.PropertyAccessorDirectoryHpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -284,12 +312,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.PropertyAccessorDirectoryHpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.PropertyAccessorDirectoryHpp.getValue(), valueReference);
     }
 
     public String getPropertyAccessorDirectoryCpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.PropertyAccessorDirectoryCpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.PropertyAccessorDirectoryCpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -298,12 +326,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.PropertyAccessorDirectoryCpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.PropertyAccessorDirectoryCpp.getValue(), valueReference);
     }
 
     public String getObjectFactoryDirectoryHpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ObjectFactoryDirectoryHpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ObjectFactoryDirectoryHpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -312,12 +340,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ObjectFactoryDirectoryHpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ObjectFactoryDirectoryHpp.getValue(), valueReference);
     }
 
     public String getObjectFactoryDirectoryCpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ObjectFactoryDirectoryCpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.ObjectFactoryDirectoryCpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -326,12 +354,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ObjectFactoryDirectoryCpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.ObjectFactoryDirectoryCpp.getValue(), valueReference);
     }
 
     public String getPropertyAccessorFactoryDirectoryHpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.PropertyAccessorFactoryDirectoryHpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.PropertyAccessorFactoryDirectoryHpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -340,12 +368,12 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.PropertyAccessorFactoryDirectoryHpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.PropertyAccessorFactoryDirectoryHpp.getValue(), valueReference);
     }
 
     public String getPropertyAccessorFactoryDirectoryCpp() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.PropertyAccessorFactoryDirectoryCpp.getValue(), result, -1);
+        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.PropertyAccessorFactoryDirectoryCpp.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -354,81 +382,85 @@ public class VPGGenerationOption {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.PropertyAccessorFactoryDirectoryCpp.getValue(), valueReference, -1);
+        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.PropertyAccessorFactoryDirectoryCpp.getValue(), valueReference);
     }
 
     public long getPluginsCount() {
-        return VPGDllFunctions.Instance.GetContainerCount(Handle, VPGGenerationOptionProperty.Plugins.getValue());
+        return VPGDllFunctions.Instance.GetCount(Handle, VPGGenerationOptionProperty.Plugins.getValue());
     }
 
-    public String getPluginsAt(long index) {
+    public String getPluginsAtIndex(long index) {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGenerationOptionProperty.Plugins.getValue(), result, index);
+        VPGDllFunctions.Instance.ReadStringAtIndex(Handle, VPGGenerationOptionProperty.Plugins.getValue(), result, index);
         return result.getValue().getWideString(0);
     }
 
-    public void setPluginsAt(long index, String value) {
+    public void setPluginsAtIndex(long index, String value) {
         Pointer valuePtr = new Memory(Native.WCHAR_SIZE * (value.length() + 1));
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGenerationOptionProperty.Plugins.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.WriteStringAtIndex(Handle, VPGGenerationOptionProperty.Plugins.getValue(), valueReference, index);
     }
 
     public void insertPlugins(String value) {
-        insertPluginsAt(-1, value);
+        insertPluginsAtIndex(-1, value);
     }
 
-    public void insertPluginsAt(long index, String value) {
+    public void insertPluginsAtIndex(long index, String value) {
         Pointer valuePtr = new Memory(Native.WCHAR_SIZE * (value.length() + 1));
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.InsertString(Handle, VPGGenerationOptionProperty.Plugins.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.InsertStringAtIndex(Handle, VPGGenerationOptionProperty.Plugins.getValue(), valueReference, index);
     }
 
-    public void removePluginsAt(long index) {
-        VPGDllFunctions.Instance.RemoveContainerElement(Handle, VPGGenerationOptionProperty.Plugins.getValue(), index);
+    public void removePluginsAtIndex(long index) {
+        VPGDllFunctions.Instance.RemoveAtIndex(Handle, VPGGenerationOptionProperty.Plugins.getValue(), index);
     }
 
     public void clearPlugins() {
-        VPGDllFunctions.Instance.ClearContainer(Handle, VPGGenerationOptionProperty.Plugins.getValue());
+        VPGDllFunctions.Instance.Clear(Handle, VPGGenerationOptionProperty.Plugins.getValue());
     }
 
     public long getExportsCount() {
-        return VPGDllFunctions.Instance.GetContainerCount(Handle, VPGGenerationOptionProperty.Exports.getValue());
+        return VPGDllFunctions.Instance.GetCount(Handle, VPGGenerationOptionProperty.Exports.getValue());
     }
 
-    public VPGGenerationOptionExport getExportsAt(long index) {
-        return new VPGGenerationOptionExport(VPGDllFunctions.Instance.ReadObject(Handle, VPGGenerationOptionProperty.Exports.getValue(), index));
+    public VPGGenerationOptionExport getExportsAtIndex(long index) {
+        return new VPGGenerationOptionExport(VPGDllFunctions.Instance.ReadObjectAtIndex(Handle, VPGGenerationOptionProperty.Exports.getValue(), index));
     }
 
-    public void setExportsAt(long index, VPGGenerationOptionExport value) {
-        VPGDllFunctions.Instance.WriteObject(Handle, VPGGenerationOptionProperty.Exports.getValue(), value.Handle, index);
+    public void setExportsAtIndex(long index, VPGGenerationOptionExport value) {
+        VPGDllFunctions.Instance.WriteObjectAtIndex(Handle, VPGGenerationOptionProperty.Exports.getValue(), value.Handle, index);
     }
 
     public VPGGenerationOptionExport addExports() {
-        return addExportsAt(-1);
+        return addExportsAtIndex(-1);
     }
 
-    public VPGGenerationOptionExport addExportsAt(long index) {
-        return new VPGGenerationOptionExport(VPGDllFunctions.Instance.AddObject(Handle, VPGGenerationOptionProperty.Exports.getValue(), VPGObjectType.GenerationOptionExport.getValue(), index));
+    public VPGGenerationOptionExport addExportsAtIndex(long index) {
+        return new VPGGenerationOptionExport(VPGDllFunctions.Instance.AddObjectAtIndex(Handle, VPGGenerationOptionProperty.Exports.getValue(), VPGObjectType.GenerationOptionExport.getValue(), index));
     }
 
     public void insertExports(VPGGenerationOptionExport value) {
-        insertExportsAt(-1, value);
+        insertExportsAtIndex(-1, value);
     }
 
-    public void insertExportsAt(long index, VPGGenerationOptionExport value) {
-        VPGDllFunctions.Instance.InsertObject(Handle, VPGGenerationOptionProperty.Exports.getValue(), value.Handle, index);
+    public void insertExportsAtIndex(long index, VPGGenerationOptionExport value) {
+        VPGDllFunctions.Instance.InsertObjectAtIndex(Handle, VPGGenerationOptionProperty.Exports.getValue(), value.Handle, index);
     }
 
-    public void removeExportsAt(long index) {
-        VPGDllFunctions.Instance.RemoveContainerElement(Handle, VPGGenerationOptionProperty.Exports.getValue(), index);
+    public void removeExports(VPGGenerationOptionExport value) {
+        VPGDllFunctions.Instance.RemoveObject(Handle, VPGGenerationOptionProperty.Exports.getValue(), value.Handle);
+    }
+
+    public void removeExportsAtIndex(long index) {
+        VPGDllFunctions.Instance.RemoveAtIndex(Handle, VPGGenerationOptionProperty.Exports.getValue(), index);
     }
 
     public void clearExports() {
-        VPGDllFunctions.Instance.ClearContainer(Handle, VPGGenerationOptionProperty.Exports.getValue());
+        VPGDllFunctions.Instance.Clear(Handle, VPGGenerationOptionProperty.Exports.getValue());
     }
     // </editor-fold>
 }

@@ -3,7 +3,8 @@ package com.vcc.type.git;
 import java.util.Objects;
 
 public enum VPGGitFormProperty {
-    Log(0);
+    Log(0),
+    GitManager(1);
 
     public final Integer value;
 
