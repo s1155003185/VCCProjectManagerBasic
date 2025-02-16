@@ -1,17 +1,8 @@
 package com.vcc;
 
-import com.vcc.form.git.VPGGitForm;
 import com.vcc.form.workspace.VPGMainForm;
-import com.vcc.form.workspace.VPGWorkspaceForm;
-import com.vcc.model.generation.VPGGenerationOption;
-import com.vcc.model.git.VPGGitLog;
-import java.awt.Color;
-import java.awt.Graphics;
-import javax.swing.ImageIcon;
-import javax.swing.JScrollBar;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.basic.BasicScrollBarUI;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
