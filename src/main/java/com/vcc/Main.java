@@ -1,5 +1,6 @@
 package com.vcc;
 
+import com.vcc.ui.WorkspacePanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -21,6 +22,8 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         
         setTitle("VCC Project Manager");
+        WorkspacePanel panel = new WorkspacePanel();
+        tpWorkspace.addTab("Hi", panel);
 //        // initialize interface
 //        spBase.setDividerLocation(100);
 //        spMain.setDividerLocation(spMain.getSize().height - 100);
