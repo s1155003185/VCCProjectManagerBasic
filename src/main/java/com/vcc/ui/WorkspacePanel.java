@@ -8,12 +8,12 @@ package com.vcc.ui;
  *
  * @author david
  */
-public class PanelWorkspace extends javax.swing.JPanel {
+public class WorkspacePanel extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelWorkspace
      */
-    public PanelWorkspace() {
+    public WorkspacePanel() {
         initComponents();
     }
 

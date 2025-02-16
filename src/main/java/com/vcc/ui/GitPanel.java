@@ -8,12 +8,12 @@ package com.vcc.ui;
  *
  * @author david
  */
-public class PanelGit extends javax.swing.JPanel {
+public class GitPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelGit
      */
-    public PanelGit() {
+    public GitPanel() {
         initComponents();
     }
 

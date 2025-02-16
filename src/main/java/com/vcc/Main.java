@@ -1,6 +1,5 @@
 package com.vcc;
 
-import com.vcc.form.workspace.VPGMainForm;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
