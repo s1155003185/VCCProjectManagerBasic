@@ -26,19 +26,66 @@ public class PanelGit extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        spBase = new javax.swing.JSplitPane();
+        spMain = new javax.swing.JSplitPane();
+        pnlMain = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        spLeft = new javax.swing.JScrollPane();
+        trWorkspace = new javax.swing.JTree();
+
+        spBase.setDividerSize(2);
+
+        spMain.setDividerSize(2);
+        spMain.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+
+        javax.swing.GroupLayout pnlMainLayout = new javax.swing.GroupLayout(pnlMain);
+        pnlMain.setLayout(pnlMainLayout);
+        pnlMainLayout.setHorizontalGroup(
+            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 382, Short.MAX_VALUE)
+        );
+        pnlMainLayout.setVerticalGroup(
+            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 154, Short.MAX_VALUE)
+        );
+
+        spMain.setTopComponent(pnlMain);
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(234, 100));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        spMain.setBottomComponent(jScrollPane1);
+
+        spBase.setRightComponent(spMain);
+
+        spLeft.setViewportView(trWorkspace);
+
+        spBase.setLeftComponent(spLeft);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(spBase, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(spBase, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JPanel pnlMain;
+    private javax.swing.JSplitPane spBase;
+    private javax.swing.JScrollPane spLeft;
+    private javax.swing.JSplitPane spMain;
+    private javax.swing.JTree trWorkspace;
     // End of variables declaration//GEN-END:variables
 }

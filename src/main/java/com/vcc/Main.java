@@ -22,16 +22,16 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         
         setTitle("VCC Project Manager");
-        // initialize interface
-        spBase.setDividerLocation(100);
-        spMain.setDividerLocation(spMain.getSize().height - 100);
-        //setIconImage(new ImageIcon(getClass().getResource("/resources/abc.png")).getImage());
-    
-        VPGMainForm form = new VPGMainForm();
-        form.doAddWorkspaceForm();
-        System.out.println(form.getWorkspaceFormsCount());
-        form.removeWorkspaceForms(form.getWorkspaceFormsAtIndex(0));
-        System.out.println(form.getWorkspaceFormsCount());
+//        // initialize interface
+//        spBase.setDividerLocation(100);
+//        spMain.setDividerLocation(spMain.getSize().height - 100);
+//        //setIconImage(new ImageIcon(getClass().getResource("/resources/abc.png")).getImage());
+//    
+//        VPGMainForm form = new VPGMainForm();
+//        form.doAddWorkspaceForm();
+//        System.out.println(form.getWorkspaceFormsCount());
+//        form.removeWorkspaceForms(form.getWorkspaceFormsAtIndex(0));
+//        System.out.println(form.getWorkspaceFormsCount());
     }
 
     /**
@@ -43,51 +43,12 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        spBase = new javax.swing.JSplitPane();
-        spMain = new javax.swing.JSplitPane();
-        pnlMain = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        spLeft = new javax.swing.JScrollPane();
-        trWorkspace = new javax.swing.JTree();
+        tpWorkspace = new javax.swing.JTabbedPane();
         mbMenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        spBase.setDividerSize(2);
-
-        spMain.setDividerSize(2);
-        spMain.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
-
-        javax.swing.GroupLayout pnlMainLayout = new javax.swing.GroupLayout(pnlMain);
-        pnlMain.setLayout(pnlMainLayout);
-        pnlMainLayout.setHorizontalGroup(
-            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 573, Short.MAX_VALUE)
-        );
-        pnlMainLayout.setVerticalGroup(
-            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 154, Short.MAX_VALUE)
-        );
-
-        spMain.setTopComponent(pnlMain);
-        pnlMain.getAccessibleContext().setAccessibleParent(spMain);
-
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(234, 100));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        spMain.setBottomComponent(jScrollPane1);
-
-        spBase.setRightComponent(spMain);
-
-        spLeft.setViewportView(trWorkspace);
-
-        spBase.setLeftComponent(spLeft);
 
         jMenu1.setText("File");
         mbMenuBar.add(jMenu1);
@@ -101,11 +62,11 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spBase)
+            .addComponent(tpWorkspace, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spBase, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
+            .addComponent(tpWorkspace, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
         );
 
         pack();
@@ -133,13 +94,7 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JMenuBar mbMenuBar;
-    private javax.swing.JPanel pnlMain;
-    private javax.swing.JSplitPane spBase;
-    private javax.swing.JScrollPane spLeft;
-    private javax.swing.JSplitPane spMain;
-    private javax.swing.JTree trWorkspace;
+    private javax.swing.JTabbedPane tpWorkspace;
     // End of variables declaration//GEN-END:variables
 }
