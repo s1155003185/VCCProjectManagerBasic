@@ -23,7 +23,7 @@ public class Main extends javax.swing.JFrame {
         
         setTitle("VCC Project Manager");
         WorkspacePanel panel = new WorkspacePanel();
-        tpWorkspace.addTab("Hi", panel);
+        tpWorkspace.addTab("Default", panel);
 //        // initialize interface
 //        spBase.setDividerLocation(100);
 //        spMain.setDividerLocation(spMain.getSize().height - 100);

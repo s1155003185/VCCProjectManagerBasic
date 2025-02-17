@@ -26,15 +26,10 @@ public class GitPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        spBase = new javax.swing.JSplitPane();
         spMain = new javax.swing.JSplitPane();
         pnlMain = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        spLeft = new javax.swing.JScrollPane();
-        trWorkspace = new javax.swing.JTree();
-
-        spBase.setDividerSize(2);
 
         spMain.setDividerSize(2);
         spMain.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
@@ -43,7 +38,7 @@ public class GitPanel extends javax.swing.JPanel {
         pnlMain.setLayout(pnlMainLayout);
         pnlMainLayout.setHorizontalGroup(
             pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 382, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         pnlMainLayout.setVerticalGroup(
             pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -60,21 +55,19 @@ public class GitPanel extends javax.swing.JPanel {
 
         spMain.setBottomComponent(jScrollPane1);
 
-        spBase.setRightComponent(spMain);
-
-        spLeft.setViewportView(trWorkspace);
-
-        spBase.setLeftComponent(spLeft);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spBase, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(spMain))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spBase, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addGap(0, 312, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(spMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -83,9 +76,6 @@ public class GitPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel pnlMain;
-    private javax.swing.JSplitPane spBase;
-    private javax.swing.JScrollPane spLeft;
     private javax.swing.JSplitPane spMain;
-    private javax.swing.JTree trWorkspace;
     // End of variables declaration//GEN-END:variables
 }
