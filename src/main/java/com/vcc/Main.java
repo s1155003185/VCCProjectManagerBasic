@@ -31,17 +31,6 @@ public class Main extends javax.swing.JFrame {
             WorkspacePanel panel = new WorkspacePanel(mainForm.getWorkspaceFormsAtIndex(i));
             tpWorkspace.addTab(panel.getWorkspaceName(), panel);
         }
-        
-//        // initialize interface
-//        spBase.setDividerLocation(100);
-//        spMain.setDividerLocation(spMain.getSize().height - 100);
-//        //setIconImage(new ImageIcon(getClass().getResource("/resources/abc.png")).getImage());
-//    
-//        VPGMainForm form = new VPGMainForm();
-//        form.doAddWorkspaceForm();
-//        System.out.println(form.getWorkspaceFormsCount());
-//        form.removeWorkspaceForms(form.getWorkspaceFormsAtIndex(0));
-//        System.out.println(form.getWorkspaceFormsCount());
     }
 
     /**
