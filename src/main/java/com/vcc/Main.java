@@ -1,6 +1,7 @@
 package com.vcc;
 
 import com.vcc.form.workspace.VPGMainForm;
+import com.vcc.form.workspace.VPGWorkspaceForm;
 import com.vcc.ui.WorkspacePanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -28,9 +29,13 @@ public class Main extends javax.swing.JFrame {
         mainForm.doInitialize();
         
         for (long i = 0; i < mainForm.getWorkspaceFormsCount(); i++) {
-            WorkspacePanel panel = new WorkspacePanel(mainForm.getWorkspaceFormsAtIndex(i));
-            tpWorkspace.addTab(panel.getWorkspaceName(), panel);
+            addTab(mainForm.getWorkspaceFormsAtIndex(i));
         }
+    }
+    
+    private void addTab(VPGWorkspaceForm workspaceForm) {
+        WorkspacePanel panel = new WorkspacePanel(workspaceForm);
+        tpWorkspace.addTab(panel.getWorkspaceName(), panel);
     }
 
     /**
