@@ -4,17 +4,28 @@
  */
 package com.vcc.ui;
 
+import com.vcc.form.workspace.VPGWorkspaceForm;
+
 /**
  *
  * @author david
  */
 public class WorkspacePanel extends javax.swing.JPanel {
 
+    final private VPGWorkspaceForm workspaceForm;
+    
+    public String getWorkspaceName() {
+        return workspaceForm.getName();
+    }
+    
     /**
      * Creates new form PanelWorkspace
+     * @param workspaceForm
      */
-    public WorkspacePanel() {
+    public WorkspacePanel(VPGWorkspaceForm workspaceForm) {
         initComponents();
+        
+        this.workspaceForm = workspaceForm;
     }
 
     /**
