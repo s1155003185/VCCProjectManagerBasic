@@ -3,6 +3,10 @@ package com.vcc;
 import com.vcc.form.workspace.VPGMainForm;
 import com.vcc.form.workspace.VPGWorkspaceForm;
 import com.vcc.ui.WorkspacePanel;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -35,7 +39,24 @@ public class Main extends javax.swing.JFrame {
     
     private void addTab(VPGWorkspaceForm workspaceForm) {
         WorkspacePanel panel = new WorkspacePanel(workspaceForm);
-        tpWorkspace.addTab(panel.getWorkspaceName(), panel);
+        String title = panel.getWorkspaceName();
+        tpWorkspace.addTab(title, panel);
+        
+        // TODO: Add "X" at Tab
+//        JPanel tabPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
+//        JLabel tabLabel = new JLabel(title);
+//        JButton closeButton = new JButton("X");
+//
+//        closeButton.addActionListener(e -> {
+//            int index = tpWorkspace.indexOfTab(title);
+//            if (index != -1) {
+//                tpWorkspace.remove(index);
+//            }
+//        });
+//
+//        tabPanel.add(tabLabel);
+//        tabPanel.add(closeButton);
+//        tpWorkspace.setTabComponentAt(tpWorkspace.indexOfTab(title), tabPanel);
     }
 
     /**
