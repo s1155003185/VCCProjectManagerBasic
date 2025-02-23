@@ -1,5 +1,6 @@
 package com.vcc;
 
+import com.vcc.form.workspace.VPGMainForm;
 import com.vcc.ui.WorkspacePanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -18,12 +19,16 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form MainForm
      */
+    final private VPGMainForm mainForm;
     public Main() {
         initComponents();
         
         setTitle("VCC Project Manager");
-        WorkspacePanel panel = new WorkspacePanel();
-        tpWorkspace.addTab("Default", panel);
+        mainForm = new VPGMainForm();
+        mainForm.doInitialize();
+        
+//        WorkspacePanel panel = new WorkspacePanel();
+//        tpWorkspace.addTab("Default", panel);
 //        // initialize interface
 //        spBase.setDividerLocation(100);
 //        spMain.setDividerLocation(spMain.getSize().height - 100);

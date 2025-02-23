@@ -56,14 +56,6 @@ public class VPGMainForm {
     public void clearWorkspaceForms() {
         VPGDllFunctions.Instance.Clear(Handle, VPGMainFormProperty.WorkspaceForms.getValue());
     }
-
-    public VPGWorkspaceForm getCurrentWorkspaceForm() {
-        return new VPGWorkspaceForm(VPGDllFunctions.Instance.ReadObject(Handle, VPGMainFormProperty.CurrentWorkspaceForm.getValue()));
-    }
-
-    public void setCurrentWorkspaceForm(VPGWorkspaceForm value) {
-        VPGDllFunctions.Instance.WriteObject(Handle, VPGMainFormProperty.CurrentWorkspaceForm.getValue(), value.Handle);
-    }
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Generated Form Actions">
@@ -113,12 +105,8 @@ public class VPGMainForm {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Generated Form Custom Actions">
-    public void doAddWorkspaceForm() {
-        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.AddWorkspaceForm.getValue());
-    }
-
-    public void doDeleteWorkspaceForm() {
-        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.DeleteWorkspaceForm.getValue());
+    public void doInitialize() {
+        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.Initialize.getValue());
     }
     // </editor-fold>
 }
