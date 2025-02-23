@@ -4,9 +4,13 @@ import com.vcc.form.workspace.VPGMainForm;
 import com.vcc.form.workspace.VPGWorkspaceForm;
 import com.vcc.ui.WorkspacePanel;
 import java.awt.FlowLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -57,8 +61,77 @@ public class Main extends javax.swing.JFrame {
 //        tabPanel.add(tabLabel);
 //        tabPanel.add(closeButton);
 //        tpWorkspace.setTabComponentAt(tpWorkspace.indexOfTab(title), tabPanel);
+
+    // rename tab
+//    tabLabel.addMouseListener(new MouseAdapter() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//                if (e.getClickCount() == 2) {
+//                    renameTab(tabLabel, title);
+//                }
+//            }
+//        });
+        addTabPopupMenu(title);
+        
+        
+    }
+    
+    private void addTabPopupMenu(String title) {
+        // Adding right-click popup menu
+        JPopupMenu popupMenu = new JPopupMenu();
+        JMenuItem closeTabItem = new JMenuItem("Close Tab");
+        closeTabItem.addActionListener(e -> {
+            int index = tpWorkspace.indexOfTab(title);
+            if (index != -1) {
+                tpWorkspace.remove(index);
+            }
+        });
+        popupMenu.add(closeTabItem);
+
+        tpWorkspace.setComponentPopupMenu(popupMenu); // Set popup menu to tab panel
+        tpWorkspace.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (e.isPopupTrigger()) {
+                    popupMenu.show(e.getComponent(), e.getX(), e.getY());
+                }
+            }
+        });
     }
 
+//    private void renameTab(JLabel tabLabel, String oldTitle) {
+//        JTextField textField = new JTextField(oldTitle);
+//        textField.selectAll();
+//        textField.addActionListener(e -> {
+//            String newTitle = textField.getText();
+//            int index = tabbedPane.indexOfTab(oldTitle);
+//            if (index != -1) {
+//                tabbedPane.setTitleAt(index, newTitle);
+//                tabLabel.setText(newTitle);
+//                tabbedPane.setTabComponentAt(index, createTabComponent(newTitle)); // Update tab component
+//            }
+//        });
+//
+//        // Replace tab label with text field
+//        tabLabel.getParent().remove(tabLabel);
+//        tabLabel.getParent().add(textField);
+//        textField.requestFocusInWindow();
+//        textField.addFocusListener(new FocusAdapter() {
+//            @Override
+//            public void focusLost(FocusEvent e) {
+//                String newTitle = textField.getText();
+//                int index = tabbedPane.indexOfTab(oldTitle);
+//                if (index != -1) {
+//                    tabbedPane.setTitleAt(index, newTitle);
+//                    tabLabel.setText(newTitle);
+//                    tabbedPane.setTabComponentAt(index, createTabComponent(newTitle)); // Update tab component
+//                }
+//            }
+//        });
+//        tabLabel.getParent().revalidate();
+//        tabLabel.getParent().repaint();
+//    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
