@@ -4,7 +4,10 @@ import java.util.Objects;
 
 public enum VPGMainFormProperty {
     WorkspaceForms(0),
-    Initialize(1);
+    Initialize(1),
+    AddWorkspaceForm(2),
+    DeleteWorkspaceForm(3),
+    RenameWorkspaceForm(4);
 
     public final Integer value;
 

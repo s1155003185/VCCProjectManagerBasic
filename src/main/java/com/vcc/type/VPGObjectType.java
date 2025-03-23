@@ -9,7 +9,10 @@ public enum VPGObjectType {
     GitForm(3),
     GitLog(4),
     MainForm(5),
-    WorkspaceForm(6);
+    MainFormAddWorkspaceFormArgument(6),
+    MainFormDeleteWorkspaceFormArgument(7),
+    MainFormRenameWorkspaceFormArgument(8),
+    WorkspaceForm(9);
 
     public final Integer value;
 

@@ -2,6 +2,7 @@ package com.vcc;
 
 import com.vcc.form.workspace.VPGMainForm;
 import com.vcc.form.workspace.VPGWorkspaceForm;
+import com.vcc.model.workspace.VPGMainFormAddWorkspaceFormArgument;
 import com.vcc.ui.WorkspacePanel;
 import java.awt.FlowLayout;
 import java.awt.event.MouseAdapter;
@@ -39,6 +40,10 @@ public class Main extends javax.swing.JFrame {
         for (long i = 0; i < mainForm.getWorkspaceFormsCount(); i++) {
             addTab(mainForm.getWorkspaceFormsAtIndex(i));
         }
+        VPGMainFormAddWorkspaceFormArgument argument = new VPGMainFormAddWorkspaceFormArgument();
+        argument.setName("New tab");
+        mainForm.doAddWorkspaceForm(argument);
+        System.out.println(mainForm.getWorkspaceFormsCount());
     }
     
     private void addTab(VPGWorkspaceForm workspaceForm) {

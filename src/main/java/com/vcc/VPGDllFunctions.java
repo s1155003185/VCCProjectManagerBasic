@@ -20,7 +20,7 @@ public interface VPGDllFunctions extends Library {
     long ApplicationClearFormAction(Pointer form);
     boolean ApplicationCloseForm(Pointer form, boolean isForce);
     Pointer ApplicationCreateForm(long formType);
-    void ApplicationDoFormAction(Pointer form, long formProperty);
+    void ApplicationDoFormAction(Pointer form, long formProperty, Pointer argument);
     long ApplicationGetFormActionFirstSeqNo(Pointer form);
     long ApplicationGetFormActionLastSeqNo(Pointer form);
     boolean ApplicationIsFormClosable(Pointer form);

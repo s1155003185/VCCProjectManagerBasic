@@ -2,6 +2,9 @@ package com.vcc.form.workspace;
 
 import com.sun.jna.Pointer;
 import com.vcc.VPGDllFunctions;
+import com.vcc.model.workspace.VPGMainFormAddWorkspaceFormArgument;
+import com.vcc.model.workspace.VPGMainFormDeleteWorkspaceFormArgument;
+import com.vcc.model.workspace.VPGMainFormRenameWorkspaceFormArgument;
 import com.vcc.type.VPGObjectType;
 import com.vcc.type.workspace.VPGMainFormProperty;
 
@@ -105,8 +108,20 @@ public class VPGMainForm {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Generated Form Custom Actions">
+    public void doAddWorkspaceForm(VPGMainFormAddWorkspaceFormArgument argument) {
+        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.AddWorkspaceForm.getValue(), argument.Handle);
+    }
+
+    public void doDeleteWorkspaceForm(VPGMainFormDeleteWorkspaceFormArgument argument) {
+        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.DeleteWorkspaceForm.getValue(), argument.Handle);
+    }
+
     public void doInitialize() {
-        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.Initialize.getValue());
+        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.Initialize.getValue(), null);
+    }
+
+    public void doRenameWorkspaceForm(VPGMainFormRenameWorkspaceFormArgument argument) {
+        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.RenameWorkspaceForm.getValue(), argument.Handle);
     }
     // </editor-fold>
 }
