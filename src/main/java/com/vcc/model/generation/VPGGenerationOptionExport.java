@@ -9,6 +9,7 @@ import com.vcc.type.common.VPGGenerationOptionInterfaceType;
 import com.vcc.type.generation.VPGGenerationOptionExportProperty;
 
 public class VPGGenerationOptionExport {
+
     public Pointer Handle = null;
 
     public VPGGenerationOptionExport(Pointer handle) {

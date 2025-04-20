@@ -8,6 +8,7 @@ import com.vcc.VPGDllFunctions;
 import com.vcc.type.git.VPGGitLogProperty;
 
 public class VPGGitLog {
+
     public Pointer Handle = null;
 
     public VPGGitLog(Pointer handle) {

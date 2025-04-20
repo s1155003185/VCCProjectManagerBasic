@@ -5,13 +5,19 @@ import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.PointerByReference;
 import com.vcc.VPGDllFunctions;
+import com.vcc.type.VPGObjectType;
 import com.vcc.type.workspace.VPGMainFormAddWorkspaceFormArgumentProperty;
 
 public class VPGMainFormAddWorkspaceFormArgument {
+
     public Pointer Handle = null;
 
     public VPGMainFormAddWorkspaceFormArgument(Pointer handle) {
         this.Handle = handle;
+    }
+
+    public VPGMainFormAddWorkspaceFormArgument() {
+        this.Handle = VPGDllFunctions.Instance.ApplicationCreateActionArgument(VPGObjectType.MainFormAddWorkspaceFormArgument.getValue());
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">

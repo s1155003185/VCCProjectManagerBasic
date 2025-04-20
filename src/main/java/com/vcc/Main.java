@@ -4,13 +4,9 @@ import com.vcc.form.workspace.VPGMainForm;
 import com.vcc.form.workspace.VPGWorkspaceForm;
 import com.vcc.model.workspace.VPGMainFormAddWorkspaceFormArgument;
 import com.vcc.ui.WorkspacePanel;
-import java.awt.FlowLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -40,10 +36,9 @@ public class Main extends javax.swing.JFrame {
         for (long i = 0; i < mainForm.getWorkspaceFormsCount(); i++) {
             addTab(mainForm.getWorkspaceFormsAtIndex(i));
         }
-        VPGMainFormAddWorkspaceFormArgument argument = new VPGMainFormAddWorkspaceFormArgument();
-        argument.setName("New tab");
-        mainForm.doAddWorkspaceForm(argument);
         System.out.println(mainForm.getWorkspaceFormsCount());
+        VPGMainFormAddWorkspaceFormArgument argument = new VPGMainFormAddWorkspaceFormArgument();
+        argument.setName("Abc");
     }
     
     private void addTab(VPGWorkspaceForm workspaceForm) {

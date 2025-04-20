@@ -10,6 +10,7 @@ import com.vcc.type.common.VPGProjectType;
 import com.vcc.type.generation.VPGGenerationOptionProperty;
 
 public class VPGGenerationOption {
+
     public Pointer Handle = null;
 
     public VPGGenerationOption(Pointer handle) {
@@ -129,6 +130,14 @@ public class VPGGenerationOption {
 
     public void setIsGit(boolean value) {
         VPGDllFunctions.Instance.WriteBool(Handle, VPGGenerationOptionProperty.IsGit.getValue(), value);
+    }
+
+    public boolean getIsResultThrowException() {
+        return VPGDllFunctions.Instance.ReadBool(Handle, VPGGenerationOptionProperty.IsResultThrowException.getValue());
+    }
+
+    public void setIsResultThrowException(boolean value) {
+        VPGDllFunctions.Instance.WriteBool(Handle, VPGGenerationOptionProperty.IsResultThrowException.getValue(), value);
     }
 
     public boolean getIsExcludeUnittest() {

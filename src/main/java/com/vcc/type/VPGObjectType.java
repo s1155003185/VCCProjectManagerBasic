@@ -12,7 +12,8 @@ public enum VPGObjectType {
     MainFormAddWorkspaceFormArgument(6),
     MainFormDeleteWorkspaceFormArgument(7),
     MainFormRenameWorkspaceFormArgument(8),
-    WorkspaceForm(9);
+    OperationResult(9),
+    WorkspaceForm(10);
 
     public final Integer value;
 

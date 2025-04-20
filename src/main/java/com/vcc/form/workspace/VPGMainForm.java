@@ -2,6 +2,7 @@ package com.vcc.form.workspace;
 
 import com.sun.jna.Pointer;
 import com.vcc.VPGDllFunctions;
+import com.vcc.model.VPGOperationResult;
 import com.vcc.model.workspace.VPGMainFormAddWorkspaceFormArgument;
 import com.vcc.model.workspace.VPGMainFormDeleteWorkspaceFormArgument;
 import com.vcc.model.workspace.VPGMainFormRenameWorkspaceFormArgument;
@@ -9,6 +10,7 @@ import com.vcc.type.VPGObjectType;
 import com.vcc.type.workspace.VPGMainFormProperty;
 
 public class VPGMainForm {
+
     public Pointer Handle = null;
 
     public VPGMainForm(Pointer handle) {
@@ -70,6 +72,10 @@ public class VPGMainForm {
         VPGDllFunctions.Instance.ApplicationCloseForm(Handle, isForce);
     }
 
+    public long getActionCurrentSeqNo() {
+        return VPGDllFunctions.Instance.ApplicationGetFormActionCurrentSeqNo(Handle);
+    }
+
     public long getActionFirstSeqNo() {
         return VPGDllFunctions.Instance.ApplicationGetFormActionFirstSeqNo(Handle);
     }
@@ -86,42 +92,42 @@ public class VPGMainForm {
         return VPGDllFunctions.Instance.ApplicationIsFormClosed(Handle);
     }
 
-    public long redo(long noOfStep) {
-        return VPGDllFunctions.Instance.ApplicationRedoFormAction(Handle, noOfStep);
+    public void redo(long noOfStep) {
+        VPGDllFunctions.Instance.ApplicationRedoFormAction(Handle, noOfStep);
     }
 
-    public long redoToSeqNo(long seqNo) {
-        return VPGDllFunctions.Instance.ApplicationRedoFormActionToSeqNo(Handle, seqNo);
+    public void redoToSeqNo(long seqNo) {
+        VPGDllFunctions.Instance.ApplicationRedoFormActionToSeqNo(Handle, seqNo);
     }
 
     public long truncateAction() {
         return VPGDllFunctions.Instance.ApplicationTruncateFormAction(Handle);
     }
 
-    public long undo(long noOfStep) {
-        return VPGDllFunctions.Instance.ApplicationUndoFormAction(Handle, noOfStep);
+    public void undo(long noOfStep) {
+        VPGDllFunctions.Instance.ApplicationUndoFormAction(Handle, noOfStep);
     }
 
-    public long undoToSeqNo(long seqNo) {
-        return VPGDllFunctions.Instance.ApplicationUndoFormActionToSeqNo(Handle, seqNo);
+    public void undoToSeqNo(long seqNo) {
+        VPGDllFunctions.Instance.ApplicationUndoFormActionToSeqNo(Handle, seqNo);
     }
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Generated Form Custom Actions">
-    public void doAddWorkspaceForm(VPGMainFormAddWorkspaceFormArgument argument) {
-        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.AddWorkspaceForm.getValue(), argument.Handle);
+    public VPGOperationResult doAddWorkspaceForm(VPGMainFormAddWorkspaceFormArgument argument) {
+        return new VPGOperationResult(VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.AddWorkspaceForm.getValue(), argument.Handle));
     }
 
-    public void doDeleteWorkspaceForm(VPGMainFormDeleteWorkspaceFormArgument argument) {
-        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.DeleteWorkspaceForm.getValue(), argument.Handle);
+    public VPGOperationResult doDeleteWorkspaceForm(VPGMainFormDeleteWorkspaceFormArgument argument) {
+        return new VPGOperationResult(VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.DeleteWorkspaceForm.getValue(), argument.Handle));
     }
 
-    public void doInitialize() {
-        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.Initialize.getValue(), null);
+    public VPGOperationResult doInitialize() {
+        return new VPGOperationResult(VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.Initialize.getValue(), null));
     }
 
-    public void doRenameWorkspaceForm(VPGMainFormRenameWorkspaceFormArgument argument) {
-        VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.RenameWorkspaceForm.getValue(), argument.Handle);
+    public VPGOperationResult doRenameWorkspaceForm(VPGMainFormRenameWorkspaceFormArgument argument) {
+        return new VPGOperationResult(VPGDllFunctions.Instance.ApplicationDoFormAction(Handle, VPGMainFormProperty.RenameWorkspaceForm.getValue(), argument.Handle));
     }
     // </editor-fold>
 }

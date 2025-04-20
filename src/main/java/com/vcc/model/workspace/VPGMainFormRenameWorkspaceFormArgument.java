@@ -6,13 +6,19 @@ import com.sun.jna.Pointer;
 import com.sun.jna.ptr.PointerByReference;
 import com.vcc.VPGDllFunctions;
 import com.vcc.form.workspace.VPGWorkspaceForm;
+import com.vcc.type.VPGObjectType;
 import com.vcc.type.workspace.VPGMainFormRenameWorkspaceFormArgumentProperty;
 
 public class VPGMainFormRenameWorkspaceFormArgument {
+
     public Pointer Handle = null;
 
     public VPGMainFormRenameWorkspaceFormArgument(Pointer handle) {
         this.Handle = handle;
+    }
+
+    public VPGMainFormRenameWorkspaceFormArgument() {
+        this.Handle = VPGDllFunctions.Instance.ApplicationCreateActionArgument(VPGObjectType.MainFormRenameWorkspaceFormArgument.getValue());
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">

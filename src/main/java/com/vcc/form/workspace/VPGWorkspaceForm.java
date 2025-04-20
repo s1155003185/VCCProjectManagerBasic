@@ -10,6 +10,7 @@ import com.vcc.type.VPGObjectType;
 import com.vcc.type.workspace.VPGWorkspaceFormProperty;
 
 public class VPGWorkspaceForm {
+
     public Pointer Handle = null;
 
     public VPGWorkspaceForm(Pointer handle) {
@@ -85,6 +86,10 @@ public class VPGWorkspaceForm {
         VPGDllFunctions.Instance.ApplicationCloseForm(Handle, isForce);
     }
 
+    public long getActionCurrentSeqNo() {
+        return VPGDllFunctions.Instance.ApplicationGetFormActionCurrentSeqNo(Handle);
+    }
+
     public long getActionFirstSeqNo() {
         return VPGDllFunctions.Instance.ApplicationGetFormActionFirstSeqNo(Handle);
     }
@@ -101,24 +106,24 @@ public class VPGWorkspaceForm {
         return VPGDllFunctions.Instance.ApplicationIsFormClosed(Handle);
     }
 
-    public long redo(long noOfStep) {
-        return VPGDllFunctions.Instance.ApplicationRedoFormAction(Handle, noOfStep);
+    public void redo(long noOfStep) {
+        VPGDllFunctions.Instance.ApplicationRedoFormAction(Handle, noOfStep);
     }
 
-    public long redoToSeqNo(long seqNo) {
-        return VPGDllFunctions.Instance.ApplicationRedoFormActionToSeqNo(Handle, seqNo);
+    public void redoToSeqNo(long seqNo) {
+        VPGDllFunctions.Instance.ApplicationRedoFormActionToSeqNo(Handle, seqNo);
     }
 
     public long truncateAction() {
         return VPGDllFunctions.Instance.ApplicationTruncateFormAction(Handle);
     }
 
-    public long undo(long noOfStep) {
-        return VPGDllFunctions.Instance.ApplicationUndoFormAction(Handle, noOfStep);
+    public void undo(long noOfStep) {
+        VPGDllFunctions.Instance.ApplicationUndoFormAction(Handle, noOfStep);
     }
 
-    public long undoToSeqNo(long seqNo) {
-        return VPGDllFunctions.Instance.ApplicationUndoFormActionToSeqNo(Handle, seqNo);
+    public void undoToSeqNo(long seqNo) {
+        VPGDllFunctions.Instance.ApplicationUndoFormActionToSeqNo(Handle, seqNo);
     }
     // </editor-fold>
 }
