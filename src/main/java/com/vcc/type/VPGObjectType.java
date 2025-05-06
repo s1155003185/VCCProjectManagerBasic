@@ -4,16 +4,20 @@ import java.util.Objects;
 
 public enum VPGObjectType {
     NA(0),
-    GenerationOption(1),
-    GenerationOptionExport(2),
-    GitForm(3),
-    GitLog(4),
-    MainForm(5),
-    MainFormAddWorkspaceFormArgument(6),
-    MainFormDeleteWorkspaceFormArgument(7),
-    MainFormRenameWorkspaceFormArgument(8),
-    OperationResult(9),
-    WorkspaceForm(10);
+    Config(1),
+    ConfigBehavior(2),
+    ConfigExport(3),
+    ConfigInput(4),
+    ConfigOutput(5),
+    ConfigTemplate(6),
+    GitForm(7),
+    GitLog(8),
+    MainForm(9),
+    MainFormAddWorkspaceFormArgument(10),
+    MainFormDeleteWorkspaceFormArgument(11),
+    MainFormRenameWorkspaceFormArgument(12),
+    OperationResult(13),
+    WorkspaceForm(14);
 
     public final Integer value;
 
