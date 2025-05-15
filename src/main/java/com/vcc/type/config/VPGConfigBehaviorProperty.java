@@ -3,7 +3,8 @@ package com.vcc.type.config;
 import java.util.Objects;
 
 public enum VPGConfigBehaviorProperty {
-    IsResultThrowException(0);
+    ActionHistoryType(0),
+    IsActionResultThrowException(1);
 
     public final Integer value;
 

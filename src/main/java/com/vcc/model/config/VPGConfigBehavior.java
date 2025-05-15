@@ -2,6 +2,7 @@ package com.vcc.model.config;
 
 import com.sun.jna.Pointer;
 import com.vcc.VPGDllFunctions;
+import com.vcc.type.common.VPGConfigActionHistoryType;
 import com.vcc.type.config.VPGConfigBehaviorProperty;
 
 public class VPGConfigBehavior {
@@ -13,12 +14,20 @@ public class VPGConfigBehavior {
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
-    public boolean getIsResultThrowException() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGConfigBehaviorProperty.IsResultThrowException.getValue());
+    public VPGConfigActionHistoryType getActionHistoryType() {
+        return VPGConfigActionHistoryType.parse((int)VPGDllFunctions.Instance.ReadLong(Handle, VPGConfigBehaviorProperty.ActionHistoryType.getValue()));
     }
 
-    public void setIsResultThrowException(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGConfigBehaviorProperty.IsResultThrowException.getValue(), value);
+    public void setActionHistoryType(VPGConfigActionHistoryType value) {
+        VPGDllFunctions.Instance.WriteLong(Handle, VPGConfigBehaviorProperty.ActionHistoryType.getValue(), value.getValue());
+    }
+
+    public boolean getIsActionResultThrowException() {
+        return VPGDllFunctions.Instance.ReadBool(Handle, VPGConfigBehaviorProperty.IsActionResultThrowException.getValue());
+    }
+
+    public void setIsActionResultThrowException(boolean value) {
+        VPGDllFunctions.Instance.WriteBool(Handle, VPGConfigBehaviorProperty.IsActionResultThrowException.getValue(), value);
     }
     // </editor-fold>
 }
