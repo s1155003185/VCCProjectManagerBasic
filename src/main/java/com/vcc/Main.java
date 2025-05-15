@@ -2,10 +2,10 @@ package com.vcc;
 
 import com.vcc.form.workspace.VPGMainForm;
 import com.vcc.form.workspace.VPGWorkspaceForm;
-import com.vcc.model.workspace.VPGMainFormAddWorkspaceFormArgument;
 import com.vcc.ui.WorkspacePanel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.stream.IntStream;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.UIManager;
@@ -33,19 +33,27 @@ public class Main extends javax.swing.JFrame {
         mainForm = new VPGMainForm();
         mainForm.doInitialize();
         
-        for (long i = 0; i < mainForm.getWorkspaceFormsCount(); i++) {
-            addTab(mainForm.getWorkspaceFormsAtIndex(i));
-        }
-        System.out.println(mainForm.getWorkspaceFormsCount());
-        VPGMainFormAddWorkspaceFormArgument argument = new VPGMainFormAddWorkspaceFormArgument();
-        argument.setName("Abc");
+        refreshTabs();
     }
     
-    private void addTab(VPGWorkspaceForm workspaceForm) {
-        WorkspacePanel panel = new WorkspacePanel(workspaceForm);
-        String title = panel.getWorkspaceName();
-        tpWorkspace.addTab(title, panel);
+    private void refreshTabs() {
+        // 1. if some forms are hidden, then close form
+        // 2. add tab if order missing
+        // 3. reorder tabs if not inorder
+        for (int i = tpWorkspace.getTabCount() - 1; i >= 0; i++) {
+            WorkspacePanel panel = (WorkspacePanel)tpWorkspace.getTabComponentAt(i);
+            if (panel.getTabOrder() < 0) {
+                panel.close(true);
+                tpWorkspace.remove(i);
+            }
+        }
         
+        for (long i = 0; i < mainForm.getWorkspaceFormsCount(); i++) {
+            WorkspacePanel panel = new WorkspacePanel(mainForm.getWorkspaceFormsAtIndex(i));
+            String title = panel.getWorkspaceName();
+            tpWorkspace.addTab(title, panel);
+            
+            
         // TODO: Add "X" at Tab
 //        JPanel tabPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
 //        JLabel tabLabel = new JLabel(title);
@@ -71,9 +79,8 @@ public class Main extends javax.swing.JFrame {
 //                }
 //            }
 //        });
-        addTabPopupMenu(title);
-        
-        
+            addTabPopupMenu(title);
+        }
     }
     
     private void addTabPopupMenu(String title) {
@@ -144,11 +151,21 @@ public class Main extends javax.swing.JFrame {
         tpWorkspace = new javax.swing.JTabbedPane();
         mbMenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        miAddWorkspace = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu1.setText("File");
+
+        miAddWorkspace.setText("Add Workspace");
+        miAddWorkspace.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAddWorkspaceActionPerformed(evt);
+            }
+        });
+        jMenu1.add(miAddWorkspace);
+
         mbMenuBar.add(jMenu1);
 
         jMenu2.setText("Edit");
@@ -169,6 +186,10 @@ public class Main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void miAddWorkspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAddWorkspaceActionPerformed
+        mainForm.addWorkspaceForms();
+    }//GEN-LAST:event_miAddWorkspaceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,6 +214,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar mbMenuBar;
+    private javax.swing.JMenuItem miAddWorkspace;
     private javax.swing.JTabbedPane tpWorkspace;
     // End of variables declaration//GEN-END:variables
 }

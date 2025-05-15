@@ -4,7 +4,8 @@ import java.util.Objects;
 
 public enum VPGWorkspaceFormProperty {
     Name(0),
-    GitForms(1);
+    TabOrder(1),
+    GitForms(2);
 
     public final Integer value;
 

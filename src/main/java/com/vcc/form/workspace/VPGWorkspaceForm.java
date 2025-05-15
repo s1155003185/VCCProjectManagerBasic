@@ -36,6 +36,14 @@ public class VPGWorkspaceForm {
         VPGDllFunctions.Instance.WriteString(Handle, VPGWorkspaceFormProperty.Name.getValue(), valueReference);
     }
 
+    public long getTabOrder() {
+        return VPGDllFunctions.Instance.ReadLong(Handle, VPGWorkspaceFormProperty.TabOrder.getValue());
+    }
+
+    public void setTabOrder(long value) {
+        VPGDllFunctions.Instance.WriteLong(Handle, VPGWorkspaceFormProperty.TabOrder.getValue(), value);
+    }
+
     public long getGitFormsCount() {
         return VPGDllFunctions.Instance.GetCount(Handle, VPGWorkspaceFormProperty.GitForms.getValue());
     }

@@ -27,6 +27,14 @@ public class WorkspacePanel extends javax.swing.JPanel {
         
         this.workspaceForm = workspaceForm;
     }
+    
+    public long getTabOrder() {
+        return workspaceForm.getTabOrder();
+    }
+    
+    public void close(boolean isForce) {
+        workspaceForm.close(isForce);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
