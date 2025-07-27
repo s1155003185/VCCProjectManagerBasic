@@ -189,6 +189,8 @@ public class Main extends javax.swing.JFrame {
 
     private void miAddWorkspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAddWorkspaceActionPerformed
         mainForm.addWorkspaceForms();
+        System.out.println(mainForm.getWorkspaceFormsCount());
+        refreshTabs();
     }//GEN-LAST:event_miAddWorkspaceActionPerformed
 
     /**
