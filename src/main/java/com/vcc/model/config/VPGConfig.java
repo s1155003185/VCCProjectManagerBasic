@@ -6,8 +6,9 @@ import com.sun.jna.Pointer;
 import com.sun.jna.ptr.PointerByReference;
 import com.vcc.VPGDllFunctions;
 import com.vcc.type.VPGObjectType;
-import com.vcc.type.common.VPGProjectType;
 import com.vcc.type.config.VPGConfigProperty;
+import com.vcc.type.enumtype.VPGConfigActionHistoryType;
+import com.vcc.type.enumtype.VPGProjectType;
 
 public class VPGConfig {
 
@@ -112,12 +113,40 @@ public class VPGConfig {
         VPGDllFunctions.Instance.WriteObject(Handle, VPGConfigProperty.Template.getValue(), value.Handle);
     }
 
+    public String getTemplateUrl() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.TemplateUrl.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getTemplateWorkspace() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.TemplateWorkspace.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public boolean getTemplateIsExcludeUnittest() {
+        return VPGDllFunctions.Instance.ReadBool(Handle, VPGConfigProperty.TemplateIsExcludeUnittest.getValue());
+    }
+
+    public boolean getTemplateIsExcludeVCCUnitTest() {
+        return VPGDllFunctions.Instance.ReadBool(Handle, VPGConfigProperty.TemplateIsExcludeVCCUnitTest.getValue());
+    }
+
     public VPGConfigBehavior getBehavior() {
         return new VPGConfigBehavior(VPGDllFunctions.Instance.ReadObject(Handle, VPGConfigProperty.Behavior.getValue()));
     }
 
     public void setBehavior(VPGConfigBehavior value) {
         VPGDllFunctions.Instance.WriteObject(Handle, VPGConfigProperty.Behavior.getValue(), value.Handle);
+    }
+
+    public VPGConfigActionHistoryType getBehaviorActionHistoryType() {
+        return VPGConfigActionHistoryType.parse((int)VPGDllFunctions.Instance.ReadLong(Handle, VPGConfigProperty.BehaviorActionHistoryType.getValue()));
+    }
+
+    public boolean getBehaviorIsActionResultThrowException() {
+        return VPGDllFunctions.Instance.ReadBool(Handle, VPGConfigProperty.BehaviorIsActionResultThrowException.getValue());
     }
 
     public VPGConfigInput getInput() {
@@ -128,12 +157,114 @@ public class VPGConfig {
         VPGDllFunctions.Instance.WriteObject(Handle, VPGConfigProperty.Input.getValue(), value.Handle);
     }
 
+    public String getInputTypeWorkspace() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.InputTypeWorkspace.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
     public VPGConfigOutput getOutput() {
-        return new VPGConfigOutput(VPGDllFunctions.Instance.ReadObject(Handle, VPGConfigProperty.Ouput.getValue()));
+        return new VPGConfigOutput(VPGDllFunctions.Instance.ReadObject(Handle, VPGConfigProperty.Output.getValue()));
     }
 
     public void setOutput(VPGConfigOutput value) {
-        VPGDllFunctions.Instance.WriteObject(Handle, VPGConfigProperty.Ouput.getValue(), value.Handle);
+        VPGDllFunctions.Instance.WriteObject(Handle, VPGConfigProperty.Output.getValue(), value.Handle);
+    }
+
+    public String getOutputExceptionTypeDirectory() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputExceptionTypeDirectory.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputObjectTypeDirectory() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputObjectTypeDirectory.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputApplicationDirectoryHpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputApplicationDirectoryHpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputApplicationDirectoryCpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputApplicationDirectoryCpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputActionDirectoryHpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputActionDirectoryHpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputActionDirectoryCpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputActionDirectoryCpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputFormDirectoryHpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputFormDirectoryHpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputFormDirectoryCpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputFormDirectoryCpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputObjectDirectoryHpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputObjectDirectoryHpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputObjectDirectoryCpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputObjectDirectoryCpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputPropertyAccessorDirectoryHpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputPropertyAccessorDirectoryHpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputPropertyAccessorDirectoryCpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputPropertyAccessorDirectoryCpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputObjectFactoryDirectoryHpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputObjectFactoryDirectoryHpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputObjectFactoryDirectoryCpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputObjectFactoryDirectoryCpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputPropertyAccessorFactoryDirectoryHpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputPropertyAccessorFactoryDirectoryHpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
+    public String getOutputPropertyAccessorFactoryDirectoryCpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigProperty.OutputPropertyAccessorFactoryDirectoryCpp.getValue(), result);
+        return result.getValue().getWideString(0);
     }
 
     public long getPluginsCount() {

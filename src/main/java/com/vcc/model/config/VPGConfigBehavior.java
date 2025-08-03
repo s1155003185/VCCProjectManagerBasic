@@ -2,8 +2,8 @@ package com.vcc.model.config;
 
 import com.sun.jna.Pointer;
 import com.vcc.VPGDllFunctions;
-import com.vcc.type.common.VPGConfigActionHistoryType;
 import com.vcc.type.config.VPGConfigBehaviorProperty;
+import com.vcc.type.enumtype.VPGConfigActionHistoryType;
 
 public class VPGConfigBehavior {
 

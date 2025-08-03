@@ -5,8 +5,8 @@ import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.PointerByReference;
 import com.vcc.VPGDllFunctions;
-import com.vcc.type.common.VPGConfigInterfaceType;
 import com.vcc.type.config.VPGConfigExportProperty;
+import com.vcc.type.enumtype.VPGConfigInterfaceType;
 
 public class VPGConfigExport {
 

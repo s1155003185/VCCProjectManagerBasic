@@ -10,14 +10,16 @@ public enum VPGObjectType {
     ConfigInput(4),
     ConfigOutput(5),
     ConfigTemplate(6),
-    GitForm(7),
-    GitLog(8),
-    MainForm(9),
-    MainFormAddWorkspaceFormArgument(10),
-    MainFormDeleteWorkspaceFormArgument(11),
-    MainFormRenameWorkspaceFormArgument(12),
-    OperationResult(13),
-    WorkspaceForm(14);
+    EnumClass(7),
+    EnumClassAttribute(8),
+    GitForm(9),
+    GitLog(10),
+    MainForm(11),
+    MainFormAddWorkspaceFormArgument(12),
+    MainFormDeleteWorkspaceFormArgument(13),
+    MainFormRenameWorkspaceFormArgument(14),
+    OperationResult(15),
+    WorkspaceForm(16);
 
     public final Integer value;
 

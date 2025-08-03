@@ -1,4 +1,4 @@
-package com.vcc.type.common;
+package com.vcc.type.enumtype;
 
 import java.util.Objects;
 
