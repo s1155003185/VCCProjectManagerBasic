@@ -15,19 +15,19 @@ public class VPGConfigBehavior {
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public VPGConfigActionHistoryType getActionHistoryType() {
-        return VPGConfigActionHistoryType.parse((int)VPGDllFunctions.Instance.ReadLong(Handle, VPGConfigBehaviorProperty.ActionHistoryType.getValue()));
+        return VPGConfigActionHistoryType.parse((int)VPGDllFunctions.Instance.readLong(Handle, VPGConfigBehaviorProperty.ActionHistoryType.getValue()));
     }
 
     public void setActionHistoryType(VPGConfigActionHistoryType value) {
-        VPGDllFunctions.Instance.WriteLong(Handle, VPGConfigBehaviorProperty.ActionHistoryType.getValue(), value.getValue());
+        VPGDllFunctions.Instance.writeLong(Handle, VPGConfigBehaviorProperty.ActionHistoryType.getValue(), value.getValue());
     }
 
     public boolean getIsActionResultThrowException() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGConfigBehaviorProperty.IsActionResultThrowException.getValue());
+        return VPGDllFunctions.Instance.readBool(Handle, VPGConfigBehaviorProperty.IsActionResultThrowException.getValue());
     }
 
     public void setIsActionResultThrowException(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGConfigBehaviorProperty.IsActionResultThrowException.getValue(), value);
+        VPGDllFunctions.Instance.writeBool(Handle, VPGConfigBehaviorProperty.IsActionResultThrowException.getValue(), value);
     }
     // </editor-fold>
 }

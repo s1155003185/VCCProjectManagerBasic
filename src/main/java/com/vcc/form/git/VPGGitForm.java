@@ -15,66 +15,66 @@ public class VPGGitForm {
     }
 
     public VPGGitForm() {
-        this.Handle = VPGDllFunctions.Instance.ApplicationCreateForm(VPGObjectType.GitForm.getValue());
+        this.Handle = VPGDllFunctions.Instance.applicationCreateForm(VPGObjectType.GitForm.getValue());
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public VPGGitLog getLog() {
-        return new VPGGitLog(VPGDllFunctions.Instance.ReadObject(Handle, VPGGitFormProperty.Log.getValue()));
+        return new VPGGitLog(VPGDllFunctions.Instance.readObject(Handle, VPGGitFormProperty.Log.getValue()));
     }
 
     public void setLog(VPGGitLog value) {
-        VPGDllFunctions.Instance.WriteObject(Handle, VPGGitFormProperty.Log.getValue(), value.Handle);
+        VPGDllFunctions.Instance.writeObject(Handle, VPGGitFormProperty.Log.getValue(), value.Handle);
     }
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Generated Form Actions">
     public long clearAction() {
-        return VPGDllFunctions.Instance.ApplicationClearFormAction(Handle);
+        return VPGDllFunctions.Instance.applicationClearFormAction(Handle);
     }
 
     public void close(boolean isForce) {
-        VPGDllFunctions.Instance.ApplicationCloseForm(Handle, isForce);
+        VPGDllFunctions.Instance.applicationCloseForm(Handle, isForce);
     }
 
     public long getActionCurrentSeqNo() {
-        return VPGDllFunctions.Instance.ApplicationGetFormActionCurrentSeqNo(Handle);
+        return VPGDllFunctions.Instance.applicationGetFormActionCurrentSeqNo(Handle);
     }
 
     public long getActionFirstSeqNo() {
-        return VPGDllFunctions.Instance.ApplicationGetFormActionFirstSeqNo(Handle);
+        return VPGDllFunctions.Instance.applicationGetFormActionFirstSeqNo(Handle);
     }
 
     public long getActionLastSeqNo() {
-        return VPGDllFunctions.Instance.ApplicationGetFormActionLastSeqNo(Handle);
+        return VPGDllFunctions.Instance.applicationGetFormActionLastSeqNo(Handle);
     }
 
     public boolean isClosable() {
-        return VPGDllFunctions.Instance.ApplicationIsFormClosable(Handle);
+        return VPGDllFunctions.Instance.applicationIsFormClosable(Handle);
     }
 
     public boolean isClosed() {
-        return VPGDllFunctions.Instance.ApplicationIsFormClosed(Handle);
+        return VPGDllFunctions.Instance.applicationIsFormClosed(Handle);
     }
 
     public void redo(long noOfStep) {
-        VPGDllFunctions.Instance.ApplicationRedoFormAction(Handle, noOfStep);
+        VPGDllFunctions.Instance.applicationRedoFormAction(Handle, noOfStep);
     }
 
     public void redoToSeqNo(long seqNo) {
-        VPGDllFunctions.Instance.ApplicationRedoFormActionToSeqNo(Handle, seqNo);
+        VPGDllFunctions.Instance.applicationRedoFormActionToSeqNo(Handle, seqNo);
     }
 
     public long truncateAction() {
-        return VPGDllFunctions.Instance.ApplicationTruncateFormAction(Handle);
+        return VPGDllFunctions.Instance.applicationTruncateFormAction(Handle);
     }
 
     public void undo(long noOfStep) {
-        VPGDllFunctions.Instance.ApplicationUndoFormAction(Handle, noOfStep);
+        VPGDllFunctions.Instance.applicationUndoFormAction(Handle, noOfStep);
     }
 
     public void undoToSeqNo(long seqNo) {
-        VPGDllFunctions.Instance.ApplicationUndoFormActionToSeqNo(Handle, seqNo);
+        VPGDllFunctions.Instance.applicationUndoFormActionToSeqNo(Handle, seqNo);
     }
     // </editor-fold>
 }

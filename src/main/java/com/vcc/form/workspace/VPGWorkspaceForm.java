@@ -18,13 +18,13 @@ public class VPGWorkspaceForm {
     }
 
     public VPGWorkspaceForm() {
-        this.Handle = VPGDllFunctions.Instance.ApplicationCreateForm(VPGObjectType.WorkspaceForm.getValue());
+        this.Handle = VPGDllFunctions.Instance.applicationCreateForm(VPGObjectType.WorkspaceForm.getValue());
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public String getName() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGWorkspaceFormProperty.Name.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGWorkspaceFormProperty.Name.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -33,27 +33,27 @@ public class VPGWorkspaceForm {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGWorkspaceFormProperty.Name.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGWorkspaceFormProperty.Name.getValue(), valueReference);
     }
 
     public long getTabOrder() {
-        return VPGDllFunctions.Instance.ReadLong(Handle, VPGWorkspaceFormProperty.TabOrder.getValue());
+        return VPGDllFunctions.Instance.readLong(Handle, VPGWorkspaceFormProperty.TabOrder.getValue());
     }
 
     public void setTabOrder(long value) {
-        VPGDllFunctions.Instance.WriteLong(Handle, VPGWorkspaceFormProperty.TabOrder.getValue(), value);
+        VPGDllFunctions.Instance.writeLong(Handle, VPGWorkspaceFormProperty.TabOrder.getValue(), value);
     }
 
     public long getGitFormsCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGWorkspaceFormProperty.GitForms.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGWorkspaceFormProperty.GitForms.getValue());
     }
 
     public VPGGitForm getGitFormsAtIndex(long index) {
-        return new VPGGitForm(VPGDllFunctions.Instance.ReadObjectAtIndex(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), index));
+        return new VPGGitForm(VPGDllFunctions.Instance.readObjectAtIndex(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), index));
     }
 
     public void setGitFormsAtIndex(long index, VPGGitForm value) {
-        VPGDllFunctions.Instance.WriteObjectAtIndex(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), value.Handle, index);
+        VPGDllFunctions.Instance.writeObjectAtIndex(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), value.Handle, index);
     }
 
     public VPGGitForm addGitForms() {
@@ -61,7 +61,7 @@ public class VPGWorkspaceForm {
     }
 
     public VPGGitForm addGitFormsAtIndex(long index) {
-        return new VPGGitForm(VPGDllFunctions.Instance.AddObjectAtIndex(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), VPGObjectType.GitForm.getValue(), index));
+        return new VPGGitForm(VPGDllFunctions.Instance.addObjectAtIndex(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), VPGObjectType.GitForm.getValue(), index));
     }
 
     public void insertGitForms(VPGGitForm value) {
@@ -69,69 +69,69 @@ public class VPGWorkspaceForm {
     }
 
     public void insertGitFormsAtIndex(long index, VPGGitForm value) {
-        VPGDllFunctions.Instance.InsertObjectAtIndex(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), value.Handle, index);
+        VPGDllFunctions.Instance.insertObjectAtIndex(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), value.Handle, index);
     }
 
     public void removeGitForms(VPGGitForm value) {
-        VPGDllFunctions.Instance.RemoveObject(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), value.Handle);
+        VPGDllFunctions.Instance.removeObject(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), value.Handle);
     }
 
     public void removeGitFormsAtIndex(long index) {
-        VPGDllFunctions.Instance.RemoveAtIndex(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), index);
+        VPGDllFunctions.Instance.removeAtIndex(Handle, VPGWorkspaceFormProperty.GitForms.getValue(), index);
     }
 
     public void clearGitForms() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGWorkspaceFormProperty.GitForms.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGWorkspaceFormProperty.GitForms.getValue());
     }
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Generated Form Actions">
     public long clearAction() {
-        return VPGDllFunctions.Instance.ApplicationClearFormAction(Handle);
+        return VPGDllFunctions.Instance.applicationClearFormAction(Handle);
     }
 
     public void close(boolean isForce) {
-        VPGDllFunctions.Instance.ApplicationCloseForm(Handle, isForce);
+        VPGDllFunctions.Instance.applicationCloseForm(Handle, isForce);
     }
 
     public long getActionCurrentSeqNo() {
-        return VPGDllFunctions.Instance.ApplicationGetFormActionCurrentSeqNo(Handle);
+        return VPGDllFunctions.Instance.applicationGetFormActionCurrentSeqNo(Handle);
     }
 
     public long getActionFirstSeqNo() {
-        return VPGDllFunctions.Instance.ApplicationGetFormActionFirstSeqNo(Handle);
+        return VPGDllFunctions.Instance.applicationGetFormActionFirstSeqNo(Handle);
     }
 
     public long getActionLastSeqNo() {
-        return VPGDllFunctions.Instance.ApplicationGetFormActionLastSeqNo(Handle);
+        return VPGDllFunctions.Instance.applicationGetFormActionLastSeqNo(Handle);
     }
 
     public boolean isClosable() {
-        return VPGDllFunctions.Instance.ApplicationIsFormClosable(Handle);
+        return VPGDllFunctions.Instance.applicationIsFormClosable(Handle);
     }
 
     public boolean isClosed() {
-        return VPGDllFunctions.Instance.ApplicationIsFormClosed(Handle);
+        return VPGDllFunctions.Instance.applicationIsFormClosed(Handle);
     }
 
     public void redo(long noOfStep) {
-        VPGDllFunctions.Instance.ApplicationRedoFormAction(Handle, noOfStep);
+        VPGDllFunctions.Instance.applicationRedoFormAction(Handle, noOfStep);
     }
 
     public void redoToSeqNo(long seqNo) {
-        VPGDllFunctions.Instance.ApplicationRedoFormActionToSeqNo(Handle, seqNo);
+        VPGDllFunctions.Instance.applicationRedoFormActionToSeqNo(Handle, seqNo);
     }
 
     public long truncateAction() {
-        return VPGDllFunctions.Instance.ApplicationTruncateFormAction(Handle);
+        return VPGDllFunctions.Instance.applicationTruncateFormAction(Handle);
     }
 
     public void undo(long noOfStep) {
-        VPGDllFunctions.Instance.ApplicationUndoFormAction(Handle, noOfStep);
+        VPGDllFunctions.Instance.applicationUndoFormAction(Handle, noOfStep);
     }
 
     public void undoToSeqNo(long seqNo) {
-        VPGDllFunctions.Instance.ApplicationUndoFormActionToSeqNo(Handle, seqNo);
+        VPGDllFunctions.Instance.applicationUndoFormActionToSeqNo(Handle, seqNo);
     }
     // </editor-fold>
 }

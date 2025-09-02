@@ -15,16 +15,16 @@ public class VPGMainFormDeleteWorkspaceFormArgument {
     }
 
     public VPGMainFormDeleteWorkspaceFormArgument() {
-        this.Handle = VPGDllFunctions.Instance.ApplicationCreateActionArgument(VPGObjectType.MainFormDeleteWorkspaceFormArgument.getValue());
+        this.Handle = VPGDllFunctions.Instance.applicationCreateActionArgument(VPGObjectType.MainFormDeleteWorkspaceFormArgument.getValue());
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public VPGWorkspaceForm getWorkspaceForm() {
-        return new VPGWorkspaceForm(VPGDllFunctions.Instance.ReadObject(Handle, VPGMainFormDeleteWorkspaceFormArgumentProperty.WorkspaceForm.getValue()));
+        return new VPGWorkspaceForm(VPGDllFunctions.Instance.readObject(Handle, VPGMainFormDeleteWorkspaceFormArgumentProperty.WorkspaceForm.getValue()));
     }
 
     public void setWorkspaceForm(VPGWorkspaceForm value) {
-        VPGDllFunctions.Instance.WriteObject(Handle, VPGMainFormDeleteWorkspaceFormArgumentProperty.WorkspaceForm.getValue(), value.Handle);
+        VPGDllFunctions.Instance.writeObject(Handle, VPGMainFormDeleteWorkspaceFormArgumentProperty.WorkspaceForm.getValue(), value.Handle);
     }
     // </editor-fold>
 }

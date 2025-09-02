@@ -21,16 +21,16 @@ public class VPGEnumClass {
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public VPGEnumClassType getType() {
-        return VPGEnumClassType.parse((int)VPGDllFunctions.Instance.ReadLong(Handle, VPGEnumClassProperty.Type.getValue()));
+        return VPGEnumClassType.parse((int)VPGDllFunctions.Instance.readLong(Handle, VPGEnumClassProperty.Type.getValue()));
     }
 
     public void setType(VPGEnumClassType value) {
-        VPGDllFunctions.Instance.WriteLong(Handle, VPGEnumClassProperty.Type.getValue(), value.getValue());
+        VPGDllFunctions.Instance.writeLong(Handle, VPGEnumClassProperty.Type.getValue(), value.getValue());
     }
 
     public String getName() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGEnumClassProperty.Name.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGEnumClassProperty.Name.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -39,12 +39,12 @@ public class VPGEnumClass {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGEnumClassProperty.Name.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGEnumClassProperty.Name.getValue(), valueReference);
     }
 
     public String getCommand() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGEnumClassProperty.Command.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGEnumClassProperty.Command.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -53,19 +53,19 @@ public class VPGEnumClass {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGEnumClassProperty.Command.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGEnumClassProperty.Command.getValue(), valueReference);
     }
 
     public long getPropertiesCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGEnumClassProperty.Properties.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGEnumClassProperty.Properties.getValue());
     }
 
     public VPGEnumClassAttribute getPropertiesAtIndex(long index) {
-        return new VPGEnumClassAttribute(VPGDllFunctions.Instance.ReadObjectAtIndex(Handle, VPGEnumClassProperty.Properties.getValue(), index));
+        return new VPGEnumClassAttribute(VPGDllFunctions.Instance.readObjectAtIndex(Handle, VPGEnumClassProperty.Properties.getValue(), index));
     }
 
     public void setPropertiesAtIndex(long index, VPGEnumClassAttribute value) {
-        VPGDllFunctions.Instance.WriteObjectAtIndex(Handle, VPGEnumClassProperty.Properties.getValue(), value.Handle, index);
+        VPGDllFunctions.Instance.writeObjectAtIndex(Handle, VPGEnumClassProperty.Properties.getValue(), value.Handle, index);
     }
 
     public VPGEnumClassAttribute addProperties() {
@@ -73,7 +73,7 @@ public class VPGEnumClass {
     }
 
     public VPGEnumClassAttribute addPropertiesAtIndex(long index) {
-        return new VPGEnumClassAttribute(VPGDllFunctions.Instance.AddObjectAtIndex(Handle, VPGEnumClassProperty.Properties.getValue(), VPGObjectType.EnumClassAttribute.getValue(), index));
+        return new VPGEnumClassAttribute(VPGDllFunctions.Instance.addObjectAtIndex(Handle, VPGEnumClassProperty.Properties.getValue(), VPGObjectType.EnumClassAttribute.getValue(), index));
     }
 
     public void insertProperties(VPGEnumClassAttribute value) {
@@ -81,28 +81,28 @@ public class VPGEnumClass {
     }
 
     public void insertPropertiesAtIndex(long index, VPGEnumClassAttribute value) {
-        VPGDllFunctions.Instance.InsertObjectAtIndex(Handle, VPGEnumClassProperty.Properties.getValue(), value.Handle, index);
+        VPGDllFunctions.Instance.insertObjectAtIndex(Handle, VPGEnumClassProperty.Properties.getValue(), value.Handle, index);
     }
 
     public void removeProperties(VPGEnumClassAttribute value) {
-        VPGDllFunctions.Instance.RemoveObject(Handle, VPGEnumClassProperty.Properties.getValue(), value.Handle);
+        VPGDllFunctions.Instance.removeObject(Handle, VPGEnumClassProperty.Properties.getValue(), value.Handle);
     }
 
     public void removePropertiesAtIndex(long index) {
-        VPGDllFunctions.Instance.RemoveAtIndex(Handle, VPGEnumClassProperty.Properties.getValue(), index);
+        VPGDllFunctions.Instance.removeAtIndex(Handle, VPGEnumClassProperty.Properties.getValue(), index);
     }
 
     public void clearProperties() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGEnumClassProperty.Properties.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGEnumClassProperty.Properties.getValue());
     }
 
     public long getIncludeSystemFilesCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue());
     }
 
     public String getIncludeSystemFilesAtIndex(long index) {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadStringAtIndex(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue(), result, index);
+        VPGDllFunctions.Instance.readStringAtIndex(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue(), result, index);
         return result.getValue().getWideString(0);
     }
 
@@ -111,7 +111,7 @@ public class VPGEnumClass {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteStringAtIndex(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.writeStringAtIndex(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue(), valueReference, index);
     }
 
     public void insertIncludeSystemFiles(String value) {
@@ -123,24 +123,24 @@ public class VPGEnumClass {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.InsertStringAtIndex(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.insertStringAtIndex(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue(), valueReference, index);
     }
 
     public void removeIncludeSystemFilesAtIndex(long index) {
-        VPGDllFunctions.Instance.RemoveAtIndex(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue(), index);
+        VPGDllFunctions.Instance.removeAtIndex(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue(), index);
     }
 
     public void clearIncludeSystemFiles() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGEnumClassProperty.IncludeSystemFiles.getValue());
     }
 
     public long getIncludeCustomFilesCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue());
     }
 
     public String getIncludeCustomFilesAtIndex(long index) {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadStringAtIndex(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue(), result, index);
+        VPGDllFunctions.Instance.readStringAtIndex(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue(), result, index);
         return result.getValue().getWideString(0);
     }
 
@@ -149,7 +149,7 @@ public class VPGEnumClass {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteStringAtIndex(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.writeStringAtIndex(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue(), valueReference, index);
     }
 
     public void insertIncludeCustomFiles(String value) {
@@ -161,26 +161,26 @@ public class VPGEnumClass {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.InsertStringAtIndex(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.insertStringAtIndex(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue(), valueReference, index);
     }
 
     public void removeIncludeCustomFilesAtIndex(long index) {
-        VPGDllFunctions.Instance.RemoveAtIndex(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue(), index);
+        VPGDllFunctions.Instance.removeAtIndex(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue(), index);
     }
 
     public void clearIncludeCustomFiles() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGEnumClassProperty.IncludeCustomFiles.getValue());
     }
 
     public long getPrivatePropertiesCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGEnumClassProperty.PrivateProperties.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGEnumClassProperty.PrivateProperties.getValue());
     }
 
     public String getPrivatePropertiesAtKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadStringAtKey(Handle, VPGEnumClassProperty.PrivateProperties.getValue(), result, keyPtr);
+        VPGDllFunctions.Instance.readStringAtKey(Handle, VPGEnumClassProperty.PrivateProperties.getValue(), result, keyPtr);
         return result.getValue().getWideString(0);
     }
 
@@ -191,12 +191,12 @@ public class VPGEnumClass {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteStringAtKey(Handle, VPGEnumClassProperty.PrivateProperties.getValue(), valueReference, keyPtr);
+        VPGDllFunctions.Instance.writeStringAtKey(Handle, VPGEnumClassProperty.PrivateProperties.getValue(), valueReference, keyPtr);
     }
 
     public Set<String> getPrivatePropertiesKeys() {
         Set<String> result = new HashSet<>();
-        Pointer ptrs = VPGDllFunctions.Instance.GetMapKeys(Handle, VPGEnumClassProperty.PrivateProperties.getValue());
+        Pointer ptrs = VPGDllFunctions.Instance.getMapKeys(Handle, VPGEnumClassProperty.PrivateProperties.getValue());
         long total = getPrivatePropertiesCount();
         for (var ptr : ptrs.getPointerArray(0)) {
             if (ptr == null) {
@@ -213,28 +213,28 @@ public class VPGEnumClass {
     public boolean isPrivatePropertiesContainKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
-        return VPGDllFunctions.Instance.IsContainKey(Handle, VPGEnumClassProperty.PrivateProperties.getValue(), keyPtr);
+        return VPGDllFunctions.Instance.isContainKey(Handle, VPGEnumClassProperty.PrivateProperties.getValue(), keyPtr);
     }
 
     public void removePrivatePropertiesAtKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
-        VPGDllFunctions.Instance.RemoveAtKey(Handle, VPGEnumClassProperty.PrivateProperties.getValue(), keyPtr);
+        VPGDllFunctions.Instance.removeAtKey(Handle, VPGEnumClassProperty.PrivateProperties.getValue(), keyPtr);
     }
 
     public void clearPrivateProperties() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGEnumClassProperty.PrivateProperties.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGEnumClassProperty.PrivateProperties.getValue());
     }
 
     public long getProtectedPropertiesCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGEnumClassProperty.ProtectedProperties.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGEnumClassProperty.ProtectedProperties.getValue());
     }
 
     public String getProtectedPropertiesAtKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadStringAtKey(Handle, VPGEnumClassProperty.ProtectedProperties.getValue(), result, keyPtr);
+        VPGDllFunctions.Instance.readStringAtKey(Handle, VPGEnumClassProperty.ProtectedProperties.getValue(), result, keyPtr);
         return result.getValue().getWideString(0);
     }
 
@@ -245,12 +245,12 @@ public class VPGEnumClass {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteStringAtKey(Handle, VPGEnumClassProperty.ProtectedProperties.getValue(), valueReference, keyPtr);
+        VPGDllFunctions.Instance.writeStringAtKey(Handle, VPGEnumClassProperty.ProtectedProperties.getValue(), valueReference, keyPtr);
     }
 
     public Set<String> getProtectedPropertiesKeys() {
         Set<String> result = new HashSet<>();
-        Pointer ptrs = VPGDllFunctions.Instance.GetMapKeys(Handle, VPGEnumClassProperty.ProtectedProperties.getValue());
+        Pointer ptrs = VPGDllFunctions.Instance.getMapKeys(Handle, VPGEnumClassProperty.ProtectedProperties.getValue());
         long total = getProtectedPropertiesCount();
         for (var ptr : ptrs.getPointerArray(0)) {
             if (ptr == null) {
@@ -267,60 +267,60 @@ public class VPGEnumClass {
     public boolean isProtectedPropertiesContainKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
-        return VPGDllFunctions.Instance.IsContainKey(Handle, VPGEnumClassProperty.ProtectedProperties.getValue(), keyPtr);
+        return VPGDllFunctions.Instance.isContainKey(Handle, VPGEnumClassProperty.ProtectedProperties.getValue(), keyPtr);
     }
 
     public void removeProtectedPropertiesAtKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
-        VPGDllFunctions.Instance.RemoveAtKey(Handle, VPGEnumClassProperty.ProtectedProperties.getValue(), keyPtr);
+        VPGDllFunctions.Instance.removeAtKey(Handle, VPGEnumClassProperty.ProtectedProperties.getValue(), keyPtr);
     }
 
     public void clearProtectedProperties() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGEnumClassProperty.ProtectedProperties.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGEnumClassProperty.ProtectedProperties.getValue());
     }
 
     public boolean getIsLogConfigIndependent() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGEnumClassProperty.IsLogConfigIndependent.getValue());
+        return VPGDllFunctions.Instance.readBool(Handle, VPGEnumClassProperty.IsLogConfigIndependent.getValue());
     }
 
     public void setIsLogConfigIndependent(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGEnumClassProperty.IsLogConfigIndependent.getValue(), value);
+        VPGDllFunctions.Instance.writeBool(Handle, VPGEnumClassProperty.IsLogConfigIndependent.getValue(), value);
     }
 
     public boolean getIsActionManagerIndependent() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGEnumClassProperty.IsActionManagerIndependent.getValue());
+        return VPGDllFunctions.Instance.readBool(Handle, VPGEnumClassProperty.IsActionManagerIndependent.getValue());
     }
 
     public void setIsActionManagerIndependent(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGEnumClassProperty.IsActionManagerIndependent.getValue(), value);
+        VPGDllFunctions.Instance.writeBool(Handle, VPGEnumClassProperty.IsActionManagerIndependent.getValue(), value);
     }
 
     public boolean getIsThreadManagerIndependent() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGEnumClassProperty.IsThreadManagerIndependent.getValue());
+        return VPGDllFunctions.Instance.readBool(Handle, VPGEnumClassProperty.IsThreadManagerIndependent.getValue());
     }
 
     public void setIsThreadManagerIndependent(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGEnumClassProperty.IsThreadManagerIndependent.getValue(), value);
+        VPGDllFunctions.Instance.writeBool(Handle, VPGEnumClassProperty.IsThreadManagerIndependent.getValue(), value);
     }
 
     public boolean getIsJson() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGEnumClassProperty.IsJson.getValue());
+        return VPGDllFunctions.Instance.readBool(Handle, VPGEnumClassProperty.IsJson.getValue());
     }
 
     public void setIsJson(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGEnumClassProperty.IsJson.getValue(), value);
+        VPGDllFunctions.Instance.writeBool(Handle, VPGEnumClassProperty.IsJson.getValue(), value);
     }
 
     public long getJsonAttributesCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGEnumClassProperty.JsonAttributes.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGEnumClassProperty.JsonAttributes.getValue());
     }
 
     public String getJsonAttributesAtKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadStringAtKey(Handle, VPGEnumClassProperty.JsonAttributes.getValue(), result, keyPtr);
+        VPGDllFunctions.Instance.readStringAtKey(Handle, VPGEnumClassProperty.JsonAttributes.getValue(), result, keyPtr);
         return result.getValue().getWideString(0);
     }
 
@@ -331,12 +331,12 @@ public class VPGEnumClass {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteStringAtKey(Handle, VPGEnumClassProperty.JsonAttributes.getValue(), valueReference, keyPtr);
+        VPGDllFunctions.Instance.writeStringAtKey(Handle, VPGEnumClassProperty.JsonAttributes.getValue(), valueReference, keyPtr);
     }
 
     public Set<String> getJsonAttributesKeys() {
         Set<String> result = new HashSet<>();
-        Pointer ptrs = VPGDllFunctions.Instance.GetMapKeys(Handle, VPGEnumClassProperty.JsonAttributes.getValue());
+        Pointer ptrs = VPGDllFunctions.Instance.getMapKeys(Handle, VPGEnumClassProperty.JsonAttributes.getValue());
         long total = getJsonAttributesCount();
         for (var ptr : ptrs.getPointerArray(0)) {
             if (ptr == null) {
@@ -353,22 +353,22 @@ public class VPGEnumClass {
     public boolean isJsonAttributesContainKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
-        return VPGDllFunctions.Instance.IsContainKey(Handle, VPGEnumClassProperty.JsonAttributes.getValue(), keyPtr);
+        return VPGDllFunctions.Instance.isContainKey(Handle, VPGEnumClassProperty.JsonAttributes.getValue(), keyPtr);
     }
 
     public void removeJsonAttributesAtKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
-        VPGDllFunctions.Instance.RemoveAtKey(Handle, VPGEnumClassProperty.JsonAttributes.getValue(), keyPtr);
+        VPGDllFunctions.Instance.removeAtKey(Handle, VPGEnumClassProperty.JsonAttributes.getValue(), keyPtr);
     }
 
     public void clearJsonAttributes() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGEnumClassProperty.JsonAttributes.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGEnumClassProperty.JsonAttributes.getValue());
     }
 
     public String getInheritClass() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGEnumClassProperty.InheritClass.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGEnumClassProperty.InheritClass.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -377,18 +377,18 @@ public class VPGEnumClass {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGEnumClassProperty.InheritClass.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGEnumClassProperty.InheritClass.getValue(), valueReference);
     }
 
     public long getInheritClassAttributesCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue());
     }
 
     public String getInheritClassAttributesAtKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadStringAtKey(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue(), result, keyPtr);
+        VPGDllFunctions.Instance.readStringAtKey(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue(), result, keyPtr);
         return result.getValue().getWideString(0);
     }
 
@@ -399,12 +399,12 @@ public class VPGEnumClass {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteStringAtKey(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue(), valueReference, keyPtr);
+        VPGDllFunctions.Instance.writeStringAtKey(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue(), valueReference, keyPtr);
     }
 
     public Set<String> getInheritClassAttributesKeys() {
         Set<String> result = new HashSet<>();
-        Pointer ptrs = VPGDllFunctions.Instance.GetMapKeys(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue());
+        Pointer ptrs = VPGDllFunctions.Instance.getMapKeys(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue());
         long total = getInheritClassAttributesCount();
         for (var ptr : ptrs.getPointerArray(0)) {
             if (ptr == null) {
@@ -421,17 +421,17 @@ public class VPGEnumClass {
     public boolean isInheritClassAttributesContainKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
-        return VPGDllFunctions.Instance.IsContainKey(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue(), keyPtr);
+        return VPGDllFunctions.Instance.isContainKey(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue(), keyPtr);
     }
 
     public void removeInheritClassAttributesAtKey(String key) {
         Pointer keyPtr = new Memory(Native.WCHAR_SIZE * (key.length() + 1));
         keyPtr.setWideString(0, key);
-        VPGDllFunctions.Instance.RemoveAtKey(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue(), keyPtr);
+        VPGDllFunctions.Instance.removeAtKey(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue(), keyPtr);
     }
 
     public void clearInheritClassAttributes() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGEnumClassProperty.InheritClassAttributes.getValue());
     }
     // </editor-fold>
 }

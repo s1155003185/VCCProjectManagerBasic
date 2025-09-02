@@ -13,23 +13,23 @@ public class VPGOperationResult {
     }
 
     public VPGExceptionType getExceptionType() {
-        return VPGExceptionType.parse((int)VPGDllFunctions.Instance.ApplicationGetResultErrorCode(Handle));
+        return VPGExceptionType.parse((int)VPGDllFunctions.Instance.applicationGetResultErrorCode(Handle));
     }
 
     public String getMessage() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ApplicationGetResultMessage(Handle, result);
+        VPGDllFunctions.Instance.applicationGetResultMessage(Handle, result);
         return result.getValue().getWideString(0);
     }
     public boolean isError() {
-        return VPGDllFunctions.Instance.ApplicationIsErrorResult(Handle);
+        return VPGDllFunctions.Instance.applicationIsErrorResult(Handle);
     }
 
     public boolean isWarning() {
-        return VPGDllFunctions.Instance.ApplicationIsWarningResult(Handle);
+        return VPGDllFunctions.Instance.applicationIsWarningResult(Handle);
     }
 
     public void close() {
-        VPGDllFunctions.Instance.ApplicationEraseResult(Handle);
+        VPGDllFunctions.Instance.applicationEraseResult(Handle);
     }
 }

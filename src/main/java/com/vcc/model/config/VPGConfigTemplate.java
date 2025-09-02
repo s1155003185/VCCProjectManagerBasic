@@ -18,7 +18,7 @@ public class VPGConfigTemplate {
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public String getUrl() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigTemplateProperty.Url.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGConfigTemplateProperty.Url.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -27,12 +27,12 @@ public class VPGConfigTemplate {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGConfigTemplateProperty.Url.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGConfigTemplateProperty.Url.getValue(), valueReference);
     }
 
     public String getWorkspace() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigTemplateProperty.Workspace.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGConfigTemplateProperty.Workspace.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -41,23 +41,23 @@ public class VPGConfigTemplate {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGConfigTemplateProperty.Workspace.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGConfigTemplateProperty.Workspace.getValue(), valueReference);
     }
 
     public boolean getIsExcludeUnittest() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGConfigTemplateProperty.IsExcludeUnittest.getValue());
+        return VPGDllFunctions.Instance.readBool(Handle, VPGConfigTemplateProperty.IsExcludeUnittest.getValue());
     }
 
     public void setIsExcludeUnittest(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGConfigTemplateProperty.IsExcludeUnittest.getValue(), value);
+        VPGDllFunctions.Instance.writeBool(Handle, VPGConfigTemplateProperty.IsExcludeUnittest.getValue(), value);
     }
 
     public boolean getIsExcludeVCCUnitTest() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGConfigTemplateProperty.IsExcludeVCCUnitTest.getValue());
+        return VPGDllFunctions.Instance.readBool(Handle, VPGConfigTemplateProperty.IsExcludeVCCUnitTest.getValue());
     }
 
     public void setIsExcludeVCCUnitTest(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGConfigTemplateProperty.IsExcludeVCCUnitTest.getValue(), value);
+        VPGDllFunctions.Instance.writeBool(Handle, VPGConfigTemplateProperty.IsExcludeVCCUnitTest.getValue(), value);
     }
     // </editor-fold>
 }

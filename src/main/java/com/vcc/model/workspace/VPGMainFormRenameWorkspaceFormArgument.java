@@ -18,21 +18,21 @@ public class VPGMainFormRenameWorkspaceFormArgument {
     }
 
     public VPGMainFormRenameWorkspaceFormArgument() {
-        this.Handle = VPGDllFunctions.Instance.ApplicationCreateActionArgument(VPGObjectType.MainFormRenameWorkspaceFormArgument.getValue());
+        this.Handle = VPGDllFunctions.Instance.applicationCreateActionArgument(VPGObjectType.MainFormRenameWorkspaceFormArgument.getValue());
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public VPGWorkspaceForm getWorkspaceForm() {
-        return new VPGWorkspaceForm(VPGDllFunctions.Instance.ReadObject(Handle, VPGMainFormRenameWorkspaceFormArgumentProperty.WorkspaceForm.getValue()));
+        return new VPGWorkspaceForm(VPGDllFunctions.Instance.readObject(Handle, VPGMainFormRenameWorkspaceFormArgumentProperty.WorkspaceForm.getValue()));
     }
 
     public void setWorkspaceForm(VPGWorkspaceForm value) {
-        VPGDllFunctions.Instance.WriteObject(Handle, VPGMainFormRenameWorkspaceFormArgumentProperty.WorkspaceForm.getValue(), value.Handle);
+        VPGDllFunctions.Instance.writeObject(Handle, VPGMainFormRenameWorkspaceFormArgumentProperty.WorkspaceForm.getValue(), value.Handle);
     }
 
     public String getNewName() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGMainFormRenameWorkspaceFormArgumentProperty.NewName.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGMainFormRenameWorkspaceFormArgumentProperty.NewName.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -41,7 +41,7 @@ public class VPGMainFormRenameWorkspaceFormArgument {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGMainFormRenameWorkspaceFormArgumentProperty.NewName.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGMainFormRenameWorkspaceFormArgumentProperty.NewName.getValue(), valueReference);
     }
     // </editor-fold>
 }

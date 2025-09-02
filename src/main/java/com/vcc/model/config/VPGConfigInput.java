@@ -18,7 +18,7 @@ public class VPGConfigInput {
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public String getTypeWorkspace() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGConfigInputProperty.TypeWorkspace.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGConfigInputProperty.TypeWorkspace.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -27,7 +27,7 @@ public class VPGConfigInput {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGConfigInputProperty.TypeWorkspace.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGConfigInputProperty.TypeWorkspace.getValue(), valueReference);
     }
     // </editor-fold>
 }

@@ -17,13 +17,13 @@ public class VPGMainFormAddWorkspaceFormArgument {
     }
 
     public VPGMainFormAddWorkspaceFormArgument() {
-        this.Handle = VPGDllFunctions.Instance.ApplicationCreateActionArgument(VPGObjectType.MainFormAddWorkspaceFormArgument.getValue());
+        this.Handle = VPGDllFunctions.Instance.applicationCreateActionArgument(VPGObjectType.MainFormAddWorkspaceFormArgument.getValue());
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public String getName() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGMainFormAddWorkspaceFormArgumentProperty.Name.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGMainFormAddWorkspaceFormArgumentProperty.Name.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -32,7 +32,7 @@ public class VPGMainFormAddWorkspaceFormArgument {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGMainFormAddWorkspaceFormArgumentProperty.Name.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGMainFormAddWorkspaceFormArgumentProperty.Name.getValue(), valueReference);
     }
     // </editor-fold>
 }

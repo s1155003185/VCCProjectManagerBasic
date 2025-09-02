@@ -17,16 +17,16 @@ public class VPGGitLog {
 
     // <editor-fold defaultstate="collapsed" desc="Generated Properties">
     public long getColumnIndex() {
-        return VPGDllFunctions.Instance.ReadLong(Handle, VPGGitLogProperty.ColumnIndex.getValue());
+        return VPGDllFunctions.Instance.readLong(Handle, VPGGitLogProperty.ColumnIndex.getValue());
     }
 
     public void setColumnIndex(long value) {
-        VPGDllFunctions.Instance.WriteLong(Handle, VPGGitLogProperty.ColumnIndex.getValue(), value);
+        VPGDllFunctions.Instance.writeLong(Handle, VPGGitLogProperty.ColumnIndex.getValue(), value);
     }
 
     public String getHashID() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.HashID.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.HashID.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -35,12 +35,12 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.HashID.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.HashID.getValue(), valueReference);
     }
 
     public String getAbbreviatedHashID() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.AbbreviatedHashID.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.AbbreviatedHashID.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -49,12 +49,12 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.AbbreviatedHashID.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.AbbreviatedHashID.getValue(), valueReference);
     }
 
     public String getTreeHashID() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.TreeHashID.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.TreeHashID.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -63,12 +63,12 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.TreeHashID.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.TreeHashID.getValue(), valueReference);
     }
 
     public String getAbbreviatedTreeHashID() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.AbbreviatedTreeHashID.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.AbbreviatedTreeHashID.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -77,16 +77,16 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.AbbreviatedTreeHashID.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.AbbreviatedTreeHashID.getValue(), valueReference);
     }
 
     public long getParentHashIDsCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGGitLogProperty.ParentHashIDs.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGGitLogProperty.ParentHashIDs.getValue());
     }
 
     public String getParentHashIDsAtIndex(long index) {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadStringAtIndex(Handle, VPGGitLogProperty.ParentHashIDs.getValue(), result, index);
+        VPGDllFunctions.Instance.readStringAtIndex(Handle, VPGGitLogProperty.ParentHashIDs.getValue(), result, index);
         return result.getValue().getWideString(0);
     }
 
@@ -95,7 +95,7 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteStringAtIndex(Handle, VPGGitLogProperty.ParentHashIDs.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.writeStringAtIndex(Handle, VPGGitLogProperty.ParentHashIDs.getValue(), valueReference, index);
     }
 
     public void insertParentHashIDs(String value) {
@@ -107,24 +107,24 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.InsertStringAtIndex(Handle, VPGGitLogProperty.ParentHashIDs.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.insertStringAtIndex(Handle, VPGGitLogProperty.ParentHashIDs.getValue(), valueReference, index);
     }
 
     public void removeParentHashIDsAtIndex(long index) {
-        VPGDllFunctions.Instance.RemoveAtIndex(Handle, VPGGitLogProperty.ParentHashIDs.getValue(), index);
+        VPGDllFunctions.Instance.removeAtIndex(Handle, VPGGitLogProperty.ParentHashIDs.getValue(), index);
     }
 
     public void clearParentHashIDs() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGGitLogProperty.ParentHashIDs.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGGitLogProperty.ParentHashIDs.getValue());
     }
 
     public long getAbbreviatedParentHashIDsCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue());
     }
 
     public String getAbbreviatedParentHashIDsAtIndex(long index) {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadStringAtIndex(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue(), result, index);
+        VPGDllFunctions.Instance.readStringAtIndex(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue(), result, index);
         return result.getValue().getWideString(0);
     }
 
@@ -133,7 +133,7 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteStringAtIndex(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.writeStringAtIndex(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue(), valueReference, index);
     }
 
     public void insertAbbreviatedParentHashIDs(String value) {
@@ -145,32 +145,32 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.InsertStringAtIndex(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.insertStringAtIndex(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue(), valueReference, index);
     }
 
     public void removeAbbreviatedParentHashIDsAtIndex(long index) {
-        VPGDllFunctions.Instance.RemoveAtIndex(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue(), index);
+        VPGDllFunctions.Instance.removeAtIndex(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue(), index);
     }
 
     public void clearAbbreviatedParentHashIDs() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGGitLogProperty.AbbreviatedParentHashIDs.getValue());
     }
 
     public boolean getIsHead() {
-        return VPGDllFunctions.Instance.ReadBool(Handle, VPGGitLogProperty.IsHead.getValue());
+        return VPGDllFunctions.Instance.readBool(Handle, VPGGitLogProperty.IsHead.getValue());
     }
 
     public void setIsHead(boolean value) {
-        VPGDllFunctions.Instance.WriteBool(Handle, VPGGitLogProperty.IsHead.getValue(), value);
+        VPGDllFunctions.Instance.writeBool(Handle, VPGGitLogProperty.IsHead.getValue(), value);
     }
 
     public long getBranchesCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGGitLogProperty.Branches.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGGitLogProperty.Branches.getValue());
     }
 
     public String getBranchesAtIndex(long index) {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadStringAtIndex(Handle, VPGGitLogProperty.Branches.getValue(), result, index);
+        VPGDllFunctions.Instance.readStringAtIndex(Handle, VPGGitLogProperty.Branches.getValue(), result, index);
         return result.getValue().getWideString(0);
     }
 
@@ -179,7 +179,7 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteStringAtIndex(Handle, VPGGitLogProperty.Branches.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.writeStringAtIndex(Handle, VPGGitLogProperty.Branches.getValue(), valueReference, index);
     }
 
     public void insertBranches(String value) {
@@ -191,24 +191,24 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.InsertStringAtIndex(Handle, VPGGitLogProperty.Branches.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.insertStringAtIndex(Handle, VPGGitLogProperty.Branches.getValue(), valueReference, index);
     }
 
     public void removeBranchesAtIndex(long index) {
-        VPGDllFunctions.Instance.RemoveAtIndex(Handle, VPGGitLogProperty.Branches.getValue(), index);
+        VPGDllFunctions.Instance.removeAtIndex(Handle, VPGGitLogProperty.Branches.getValue(), index);
     }
 
     public void clearBranches() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGGitLogProperty.Branches.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGGitLogProperty.Branches.getValue());
     }
 
     public long getTagsCount() {
-        return VPGDllFunctions.Instance.GetCount(Handle, VPGGitLogProperty.Tags.getValue());
+        return VPGDllFunctions.Instance.getCount(Handle, VPGGitLogProperty.Tags.getValue());
     }
 
     public String getTagsAtIndex(long index) {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadStringAtIndex(Handle, VPGGitLogProperty.Tags.getValue(), result, index);
+        VPGDllFunctions.Instance.readStringAtIndex(Handle, VPGGitLogProperty.Tags.getValue(), result, index);
         return result.getValue().getWideString(0);
     }
 
@@ -217,7 +217,7 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteStringAtIndex(Handle, VPGGitLogProperty.Tags.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.writeStringAtIndex(Handle, VPGGitLogProperty.Tags.getValue(), valueReference, index);
     }
 
     public void insertTags(String value) {
@@ -229,20 +229,20 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.InsertStringAtIndex(Handle, VPGGitLogProperty.Tags.getValue(), valueReference, index);
+        VPGDllFunctions.Instance.insertStringAtIndex(Handle, VPGGitLogProperty.Tags.getValue(), valueReference, index);
     }
 
     public void removeTagsAtIndex(long index) {
-        VPGDllFunctions.Instance.RemoveAtIndex(Handle, VPGGitLogProperty.Tags.getValue(), index);
+        VPGDllFunctions.Instance.removeAtIndex(Handle, VPGGitLogProperty.Tags.getValue(), index);
     }
 
     public void clearTags() {
-        VPGDllFunctions.Instance.Clear(Handle, VPGGitLogProperty.Tags.getValue());
+        VPGDllFunctions.Instance.clear(Handle, VPGGitLogProperty.Tags.getValue());
     }
 
     public String getAuthor() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.Author.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.Author.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -251,12 +251,12 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.Author.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.Author.getValue(), valueReference);
     }
 
     public String getAuthorEmail() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.AuthorEmail.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.AuthorEmail.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -265,20 +265,20 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.AuthorEmail.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.AuthorEmail.getValue(), valueReference);
     }
 
     public long getAuthorDate() {
-        return VPGDllFunctions.Instance.ReadLong(Handle, VPGGitLogProperty.AuthorDate.getValue());
+        return VPGDllFunctions.Instance.readLong(Handle, VPGGitLogProperty.AuthorDate.getValue());
     }
 
     public void setAuthorDate(long value) {
-        VPGDllFunctions.Instance.WriteLong(Handle, VPGGitLogProperty.AuthorDate.getValue(), value);
+        VPGDllFunctions.Instance.writeLong(Handle, VPGGitLogProperty.AuthorDate.getValue(), value);
     }
 
     public String getAuthorDateStr() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.AuthorDateStr.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.AuthorDateStr.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -287,12 +287,12 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.AuthorDateStr.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.AuthorDateStr.getValue(), valueReference);
     }
 
     public String getCommitter() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.Committer.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.Committer.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -301,12 +301,12 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.Committer.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.Committer.getValue(), valueReference);
     }
 
     public String getCommitterEmail() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.CommitterEmail.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.CommitterEmail.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -315,20 +315,20 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.CommitterEmail.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.CommitterEmail.getValue(), valueReference);
     }
 
     public long getCommitDate() {
-        return VPGDllFunctions.Instance.ReadLong(Handle, VPGGitLogProperty.CommitDate.getValue());
+        return VPGDllFunctions.Instance.readLong(Handle, VPGGitLogProperty.CommitDate.getValue());
     }
 
     public void setCommitDate(long value) {
-        VPGDllFunctions.Instance.WriteLong(Handle, VPGGitLogProperty.CommitDate.getValue(), value);
+        VPGDllFunctions.Instance.writeLong(Handle, VPGGitLogProperty.CommitDate.getValue(), value);
     }
 
     public String getCommitDateStr() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.CommitDateStr.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.CommitDateStr.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -337,12 +337,12 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.CommitDateStr.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.CommitDateStr.getValue(), valueReference);
     }
 
     public String getTitle() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.Title.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.Title.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -351,12 +351,12 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.Title.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.Title.getValue(), valueReference);
     }
 
     public String getMessage() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.Message.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.Message.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -365,12 +365,12 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.Message.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.Message.getValue(), valueReference);
     }
 
     public String getFullMessage() {
         PointerByReference result = new PointerByReference();
-        VPGDllFunctions.Instance.ReadString(Handle, VPGGitLogProperty.FullMessage.getValue(), result);
+        VPGDllFunctions.Instance.readString(Handle, VPGGitLogProperty.FullMessage.getValue(), result);
         return result.getValue().getWideString(0);
     }
 
@@ -379,7 +379,7 @@ public class VPGGitLog {
         valuePtr.setWideString(0, value);
         PointerByReference valueReference = new PointerByReference();
         valueReference.setValue(valuePtr);
-        VPGDllFunctions.Instance.WriteString(Handle, VPGGitLogProperty.FullMessage.getValue(), valueReference);
+        VPGDllFunctions.Instance.writeString(Handle, VPGGitLogProperty.FullMessage.getValue(), valueReference);
     }
     // </editor-fold>
 }
