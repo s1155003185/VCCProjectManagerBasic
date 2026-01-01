@@ -37,8 +37,9 @@ public enum VPGConfigProperty {
     OutputObjectFactoryDirectoryCpp(31),
     OutputPropertyAccessorFactoryDirectoryHpp(32),
     OutputPropertyAccessorFactoryDirectoryCpp(33),
-    Plugins(34),
-    Exports(35);
+    OutputUnittestActionDirectoryCpp(34),
+    Plugins(35),
+    Exports(36);
 
     public final Integer value;
 

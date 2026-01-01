@@ -267,6 +267,12 @@ public class VPGConfig {
         return result.getValue().getWideString(0);
     }
 
+    public String getOutputUnittestActionDirectoryCpp() {
+        PointerByReference result = new PointerByReference();
+        VPGDllFunctions.Instance.readString(Handle, VPGConfigProperty.OutputUnittestActionDirectoryCpp.getValue(), result);
+        return result.getValue().getWideString(0);
+    }
+
     public long getPluginsCount() {
         return VPGDllFunctions.Instance.getCount(Handle, VPGConfigProperty.Plugins.getValue());
     }

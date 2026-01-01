@@ -6,7 +6,8 @@ public enum VPGConfigTemplateProperty {
     Url(0),
     Workspace(1),
     IsExcludeUnittest(2),
-    IsExcludeVCCUnitTest(3);
+    IsExcludeVCCUnitTest(3),
+    IsCppCheckerEnabled(4);
 
     public final Integer value;
 

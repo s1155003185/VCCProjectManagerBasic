@@ -18,7 +18,8 @@ public enum VPGConfigOutputProperty {
     ObjectFactoryDirectoryHpp(12),
     ObjectFactoryDirectoryCpp(13),
     PropertyAccessorFactoryDirectoryHpp(14),
-    PropertyAccessorFactoryDirectoryCpp(15);
+    PropertyAccessorFactoryDirectoryCpp(15),
+    Unittest(16);
 
     public final Integer value;
 

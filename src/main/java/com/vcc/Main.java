@@ -5,6 +5,10 @@ import com.vcc.form.workspace.VPGWorkspaceForm;
 import com.vcc.ui.WorkspacePanel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.IntStream;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
@@ -40,15 +44,23 @@ public class Main extends javax.swing.JFrame {
         // 1. if some forms are hidden, then close form
         // 2. add tab if order missing
         // 3. reorder tabs if not inorder
+        
+        Map<Long, WorkspacePanel> existingPanels = new HashMap<>();
         for (int i = tpWorkspace.getTabCount() - 1; i >= 0; i++) {
             WorkspacePanel panel = (WorkspacePanel)tpWorkspace.getTabComponentAt(i);
             if (panel.getTabOrder() < 0) {
                 panel.close(true);
-                tpWorkspace.remove(i);
+            } else {
+                existingPanels.put(panel.getTabOrder(), panel);
             }
         }
+        tpWorkspace.removeAll();
         
         for (long i = 0; i < mainForm.getWorkspaceFormsCount(); i++) {
+            if (existingPanels.containsKey(i)) {
+                tpWorkspace.add(existingPanels.get(i));
+                continue;
+            }
             WorkspacePanel panel = new WorkspacePanel(mainForm.getWorkspaceFormsAtIndex(i));
             String title = panel.getWorkspaceName();
             tpWorkspace.addTab(title, panel);

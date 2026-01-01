@@ -239,5 +239,13 @@ public class VPGConfigOutput {
         valueReference.setValue(valuePtr);
         VPGDllFunctions.Instance.writeString(Handle, VPGConfigOutputProperty.PropertyAccessorFactoryDirectoryCpp.getValue(), valueReference);
     }
+
+    public VPGConfigOutputUnittest getUnittest() {
+        return new VPGConfigOutputUnittest(VPGDllFunctions.Instance.readObject(Handle, VPGConfigOutputProperty.Unittest.getValue()));
+    }
+
+    public void setUnittest(VPGConfigOutputUnittest value) {
+        VPGDllFunctions.Instance.writeObject(Handle, VPGConfigOutputProperty.Unittest.getValue(), value.Handle);
+    }
     // </editor-fold>
 }

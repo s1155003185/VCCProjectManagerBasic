@@ -59,5 +59,13 @@ public class VPGConfigTemplate {
     public void setIsExcludeVCCUnitTest(boolean value) {
         VPGDllFunctions.Instance.writeBool(Handle, VPGConfigTemplateProperty.IsExcludeVCCUnitTest.getValue(), value);
     }
+
+    public boolean getIsCppCheckerEnabled() {
+        return VPGDllFunctions.Instance.readBool(Handle, VPGConfigTemplateProperty.IsCppCheckerEnabled.getValue());
+    }
+
+    public void setIsCppCheckerEnabled(boolean value) {
+        VPGDllFunctions.Instance.writeBool(Handle, VPGConfigTemplateProperty.IsCppCheckerEnabled.getValue(), value);
+    }
     // </editor-fold>
 }
